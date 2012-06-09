@@ -298,6 +298,7 @@ autoload -U compinit
 compinit -i
 
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# rake alias
+alias rake="bundle exec rake"
