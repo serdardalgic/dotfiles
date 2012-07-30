@@ -1,6 +1,8 @@
 # Load Autojump
+[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh ]]
 # sudo apt-get install autojump
-source /usr/share/autojump/autojump.zsh
+#source /usr/share/autojump/autojump.zsh
+export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
 #Disable Autcorrectur
 unsetopt correct_all
