@@ -29,66 +29,26 @@ bindkey '^Xe' edit-command-line
 alias -s markdown=vim
 alias -s txt=vim
 
-
-
-
-#cit
-PATH=$PATH:"/home/fatih/cit/"
-alias cit="cit.py"
-
-#todo.txt
-PATH=$PATH:"/home/fatih/Dropbox/todo/"
-alias t="todo.sh -d /home/fatih/Dropbox/todo/todo.cfg"
-
 # List direcory contents
-alias ls='ls --color=auto'
+alias ls='ls -G'
 alias lsa='ls -lah'
 alias l='ls -la'
 alias ll='ls -l'
 alias sl=ls # often screw this up
 
-alias dg="git diff"
-alias u="svn up"
+alias d="git diff"
 alias m="vim Makefile"
 
-alias sil="rm *.pisi"
-
 alias c="clear"
-alias cls="clear && ls"
 alias rm="rm -f"
 
-alias tmux="tmux -2"
-alias find32="find *  | xargs file | grep '32-bit'"
+#alias tmux="tmux -2"
 
 # Directories
 setopt auto_pushd
 setopt pushd_ignore_dups
 alias ..='cd ..'
 alias cd..='cd ..'
-
-# alias 1='cd -'
-# alias 2='cd +2'
-# alias 3='cd +3'
-# alias 4='cd +4'
-# alias 5='cd +5'
-# alias 6='cd +6'
-# alias 7='cd +7'
-# alias 8='cd +8'
-# alias 9='cd +9'
-
-# cd () {
-  # if   [[ "x$*" == "x..." ]]; then
-    # cd ../..
-  # elif [[ "x$*" == "x...." ]]; then
-    # cd ../../..
-  # elif [[ "x$*" == "x....." ]]; then
-    # cd ../../..
-  # elif [[ "x$*" == "x......" ]]; then
-    # cd ../../../..
-  # else
-    # builtin cd "$@"
-  # fi
-# }
 
 ##############
 # COMPLETION #
@@ -122,17 +82,6 @@ zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm 
 # disable named-directories autocompletion
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
 cdpath=(.)
-
-# use /etc/hosts and known_hosts for hostname completion
-[ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-[ -r /etc/hosts ] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
-hosts=(
-  "$_ssh_hosts[@]"
-  "$_etc_hosts[@]"
-  `hostname`
-  localhost
-)
-zstyle ':completion:*:hosts' hosts $hosts
 
 
 ###########
@@ -185,31 +134,6 @@ autoload colors; colors;
 export lscolors="gxfxcxdxbxegedabagacad"
 
 PS1="%{$fg[red]%}%B%n%b%{$reset_color%}@%{$fg[blue]%}%B%m%b %{$fg[yellow]%}%B%1~%b %{$reset_color%}%% "
-
-# Binary,Dec and Hex conversion functions
-#
-h2d(){
-  echo "ibase=16; $@"|bc
-}
-d2h(){
-  echo "obase=16; $@"|bc
-}
-
-h2b(){
-  echo "ibase=16;obase=2; $@"|bc
-}
-b2h(){
-  echo "obase=2;obase=16; $@"|bc
-}
-
-d2b(){
-  echo "ibase=16; $@"|bc
-}
-b2d(){
-  echo "obase=16; $@"|bc
-}
-
-
 
 # PLUGIN
 
@@ -298,8 +222,8 @@ fpath=($ZSH/plugins/extract $fpath)
 autoload -U compinit
 compinit -i
 
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # rake alias
 alias rake="bundle exec rake"
