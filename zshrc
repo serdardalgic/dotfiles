@@ -15,7 +15,6 @@ export BROWSER="google-chrome"
 # Remove words by one by, instead of fullpath
 # i.eg C-w will remove "bar" from "/foo/bar" and not the whole path
 export WORDCHARS=''
-
 bindkey -e
 
 # emacs mode
