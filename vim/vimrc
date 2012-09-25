@@ -104,14 +104,14 @@ endif
 "set autochdir
 "
 " No toolbars, menu or scrollbars in the GUI
-if has('gui')
-    set guioptions-=m  "no menu
-    set guioptions-=T  "no toolbar
-    set guioptions-=l
-    set guioptions-=L
-    set guioptions-=r  "no scrollbar
-    set guioptions-=R
-end
+"if has('gui')
+    "set guioptions-=m  "no menu
+    "set guioptions-=T  "no toolbar
+    "set guioptions-=l
+    "set guioptions-=L
+    "set guioptions-=r  "no scrollbar
+    "set guioptions-=R
+"end
 
 """"""""""""""""""""
 " Color and Syntax "
@@ -186,14 +186,14 @@ let g:AutoClosePairs_add = "\" '"  "add quotes to autoclose plugin
 
 " Tagbar plugin
 "
-nmap <leader>b :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
+"nmap <leader>b :TagbarToggle<CR>
+"let g:tagbar_autofocus = 1
 
 " Nerdtree plugin
 "
-nmap <leader>n :NERDTreeMirrorToggle <CR>
-let NERDTreeChDirMode=2
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$'] "
+"nmap <leader>n :NERDTreeMirrorToggle <CR>
+"let NERDTreeChDirMode=2
+"let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$'] "
 
 " Nerdtree-tabs plugin
 "
@@ -209,7 +209,7 @@ map <F10> :! ./%< <CR>
 imap jj <ESC>
 
 " Since I use linux, I want this
-let g:clipbrdDefaultReg = '+'
+"let g:clipbrdDefaultReg = '+'
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -224,8 +224,8 @@ nnoremap <leader>. :lcd %:p:h<CR>
 
 """ clang_complete options
 " Complete options (disable preview scratch window)
-"set completeopt=menu,menuone,longest
-set completeopt=menu,menuone
+set completeopt=menu,menuone,longest
+"set completeopt=menu,menuone
 " Limit popup menu height
 set pumheight=15
 " Show clang errors in the quickfix window
@@ -235,4 +235,5 @@ let g:clang_use_library=1 "
 " automatically complete after ->, ., ::
 let g:clang_complete_auto=1
 
+let g:clang_user_options='|| exit 0'
 
