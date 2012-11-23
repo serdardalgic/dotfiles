@@ -216,18 +216,3 @@ nmap zH :vert he
 
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
-
-""" clang_complete options
-" Complete options (disable preview scratch window)
-"set completeopt=menu,menuone,longest
-""set completeopt=menu,menuone
-"" Limit popup menu height
-"set pumheight=15
-"" Show clang errors in the quickfix window
-"let g:clang_complete_copen=1
-"" Use libclang instead of clang binary
-"let g:clang_use_library=1 "
-"" automatically complete after ->, ., ::
-"let g:clang_complete_auto=1
-"let g:clang_user_options='|| exit 0'
-
