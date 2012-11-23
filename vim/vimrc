@@ -16,8 +16,8 @@ set smartcase                   " Turn of smart searching
 set ignorecase                  " Search incase sensitive
 
 set ruler                       " show line and column number
-set wildmode=longest,list,full                    " command line tab completion, more superior
 set wildmenu			" command line tab completion, more superior
+set wildmode=list:full
 set history=100                 " Number of lines of command line history.
 
 set noerrorbells                " No beeps
@@ -36,6 +36,7 @@ set laststatus=2
 set splitright                  " Split vertical windows right to the current windows
 set splitbelow                  " Split horizontal windows below to the current windows
 set noswapfile                  " Don't use swapfile
+set clipboard+=unnamed
 
 set mat=5                       " show matching brackets for 0.5 seconds
 set wrap                        " word wrap
@@ -183,14 +184,21 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " Autoclose Plugin
 let g:AutoClosePairs_add = "\" '"  "add quotes to autoclose plugin
 
-" Tagbar plugin
-nmap <leader>b :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
+let os=substitute(system('uname'), '\n', '', '')
+
+if os == 'Linux'
+	nmap <leader>b :TagbarToggle<CR>
+	let g:tagbar_autofocus = 1
+endif
 
 " Nerdtree plugin
-nmap <leader>n :NERDTreeMirrorToggle <CR>
-let NERDTreeChDirMode=2
-let g:NERDTreeDirArrows=0
+nmap <leader>n :NERDTreeToggle <CR>
+let NERDTreeChDirMode=1
+
+if os == 'Darwin' || os == 'Mac'
+	let g:NERDTreeDirArrows=0 " Fix a bug on mac
+endif
+
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$'] "
 
 " open a NERDTree automatically when vim starts up if no files were specified
