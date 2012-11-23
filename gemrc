@@ -1,4 +1,0 @@
-#Suppressing the ri and rdoc documentation when installing gems
-
-install: --no-rdoc --no-ri
-update: --no-rdoc --no-ri

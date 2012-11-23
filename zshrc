@@ -2,6 +2,10 @@
 [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh ]]
 # sudo apt-get install autojump
 #source /usr/share/autojump/autojump.zsh
+#
+
+[[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh ]]
+#
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
 #Disable Autcorrectur
@@ -221,9 +225,3 @@ alias x=extract
 fpath=($ZSH/plugins/extract $fpath)
 autoload -U compinit
 compinit -i
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# rake alias
-alias rake="bundle exec rake"
