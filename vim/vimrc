@@ -108,7 +108,7 @@ endif
 " No toolbars, menu or scrollbars in the GUI
 if has('gui')
     if os == 'Darwin' || os == 'Mac'
-        set guifont=Source\ Code\ Pro:h12
+        set guifont=Source\ Code\ Pro:h13
     endif
 	set vb t_vb=
 	set guioptions-=m  "no menu
@@ -123,9 +123,15 @@ end
 " Color and Syntax "
 " ---------------- "
 syntax enable                   " syntax formatting for languages
-
 set background=dark
-set t_Co=256                    " set to 256 color mode if the console supports it
+
+"set t_Co=256                    " set to 256 color mode if the console supports it
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"colorscheme solarized
+ 
 "colorscheme molokai
 colorscheme Tomorrow-Night
 
