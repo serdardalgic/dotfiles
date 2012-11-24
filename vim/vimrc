@@ -122,17 +122,13 @@ end
 """"""""""""""""""""
 " Color and Syntax "
 " ---------------- "
-
 syntax enable                   " syntax formatting for languages
 
 set background=dark
 set t_Co=256                    " set to 256 color mode if the console supports it
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+"colorscheme molokai
+colorscheme Tomorrow-Night
 
-colorscheme molokai
 
 """""""""""""""""""""""""""""""""""""""""""""
 " Mappings, key bindings for plugins, etc.. "
@@ -143,6 +139,13 @@ colorscheme molokai
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+
+" Better split switching
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
 
 " This comes first, because we have mappings that depend on leader
 " With a map leader it's possible to do extra key combinations
@@ -186,9 +189,6 @@ map j gj
 
 " Make mouse middle click paste without formatting it
 map <MouseMiddle> <Esc>"*p
-
-" <C-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " Autoclose Plugin
 let g:AutoClosePairs_add = "\" '"  "add quotes to autoclose plugin
