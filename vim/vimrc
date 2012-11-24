@@ -91,6 +91,9 @@ autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
 autocmd FileType python set completeopt=menu
 autocmd FileType python set expandtab              " Tabs are converted to spaces
 
+" We'll use it for settings that should apply only to one OS (like Linux)
+let os=substitute(system('uname'), '\n', '', '')
+
 " Multibyte reading of utf-16
 if has("multi_byte")
   if &termencoding == ""
@@ -104,7 +107,9 @@ endif
 "
 " No toolbars, menu or scrollbars in the GUI
 if has('gui')
-	set guifont=Monaco:h12
+    if os == 'Darwin' || os == 'Mac'
+        set guifont=Source\ Code\ Pro:h12
+    endif
 	set vb t_vb=
 	set guioptions-=m  "no menu
 	set guioptions-=T  "no toolbar
@@ -188,7 +193,6 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " Autoclose Plugin
 let g:AutoClosePairs_add = "\" '"  "add quotes to autoclose plugin
 
-let os=substitute(system('uname'), '\n', '', '')
 if os == 'Linux'
 	nmap <leader>b :TagbarToggle<CR>
 	let g:tagbar_autofocus = 1
@@ -232,6 +236,9 @@ nnoremap <leader>ss :w !sudo tee %<CR>
 
 " trim all whitespaces away
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>       
+
+" Start scrolling three lines before the horizontal window border
+set scrolloff=3
 
 
 let g:ctrlp_cmd = 'CtrlPMRU'			" Open it in most recenlty used mode (the most important option everyone want!)
