@@ -125,7 +125,7 @@ end
 syntax enable                   " syntax formatting for languages
 set background=dark
 
-set t_Co=256                    " set to 256 color mode if the console supports it
+"set t_Co=256                    " set to 256 color mode if the console supports it
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256
 "let g:solarized_contrast="high"
@@ -134,6 +134,7 @@ set t_Co=256                    " set to 256 color mode if the console supports 
  
 "colorscheme molokai
 colorscheme Tomorrow-Night-Eighties
+
 
 """""""""""""""""""""""""""""""""""""""""""""
 " Mappings, key bindings for plugins, etc.. "
@@ -147,8 +148,8 @@ vnoremap <F1> <ESC>
 
 
 " Better split switching
-map <C-j> <C-W>j
-map <C-k> <C-W>k
+map <C-J> <C-W>j
+map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
 
@@ -182,9 +183,6 @@ nmap <leader>wq :wq!<cr>
 
 " Save fold settings, open/close folds easily with spacebar
 nnoremap <space> zz
-
-" Break lines into two pieces with Ctrl + j (reverse of Shift + j)
-nnoremap <NL> i<CR><ESC>
 
 " Move up and down on splitted lines (on small width screens)
 map <Up> gk
@@ -246,7 +244,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 set scrolloff=3
 
 
-let g:ctrlp_cmd = 'CtrlPMRU'			" Open it in most recenlty used mode (the most important option everyone want!)
+let g:ctrlp_cmd = 'CtrlP'			" Open it in most recenlty used mode (the most important option everyone want!)
 let g:ctrlp_working_path_mode = 'ra'	" search for nearest ancestor like .git, .hg, and the directory of the current file
 let g:ctrlp_match_window_bottom = 1		" show the match window at the top of the screen:
 let g:ctrlp_max_height = 10				" maxiumum height of match window
