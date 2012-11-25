@@ -148,10 +148,10 @@ vnoremap <F1> <ESC>
 
 
 " Better split switching
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " This comes first, because we have mappings that depend on leader
 " With a map leader it's possible to do extra key combinations
@@ -222,6 +222,7 @@ imap jj <ESC>
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
+
 map N Nzz
 map n nzz
 
