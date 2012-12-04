@@ -121,8 +121,7 @@ set background=dark
 "let g:solarized_visibility="high"
 "colorscheme solarized "enable iterm2-solarized preset if you want to use it
  
-"colorscheme solarized
-"colorscheme Tomorrow-Night
+
 
 " No toolbars, menu or scrollbars in the GUI
 if has('gui')
@@ -139,7 +138,16 @@ if has('gui')
     colorscheme solarized
 end
 
-colorscheme molokai
+
+"Until we fix solarized on linux use this
+if os == 'Linux'
+  colorscheme molokai
+endif
+
+if os == 'Darwin' || os == 'Mac'
+  colorscheme solarized
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""
 " Mappings, key bindings for plugins, etc.. "
 " ----------------------------------------- "
