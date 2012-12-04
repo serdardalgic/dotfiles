@@ -5,6 +5,11 @@ set nocompatible                "Turn off compability mode with Vi, we don't nee
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" Enable filetype stuff
+filetype on
+filetype plugin on
+filetype plugin indent on
+
 set cindent
 set autoindent                  " Copy indent from current line when starting a new line.
 set backspace=indent,eol,start  " makes backspace key more powerful.
@@ -68,10 +73,6 @@ set viewdir=/tmp
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
-" Enable filetype stuff
-filetype on
-filetype plugin on
-filetype plugin indent on
 
 " -[ FileTypes ]-
 " mail
@@ -91,6 +92,8 @@ autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
 autocmd FileType python set completeopt=menu
 autocmd FileType python set expandtab              " Tabs are converted to spaces
 
+autocmd BufRead,BufNewFile *.go set filetype=go
+
 " We'll use it for settings that should apply only to one OS (like Linux)
 let os=substitute(system('uname'), '\n', '', '')
 
@@ -104,20 +107,6 @@ if has("multi_byte")
   "setglobal bomb
   set fileencodings=ucs-bom,utf-8,latin1
 endif
-"
-" No toolbars, menu or scrollbars in the GUI
-if has('gui')
-    if os == 'Darwin' || os == 'Mac'
-        set guifont=Source\ Code\ Pro:h13
-    endif
-	set vb t_vb=
-	set guioptions-=m  "no menu
-	set guioptions-=T  "no toolbar
-	set guioptions-=l
-	set guioptions-=L
-	set guioptions-=r  "no scrollbar
-	set guioptions-=R
-end
 
 """"""""""""""""""""
 " Color and Syntax "
@@ -132,10 +121,25 @@ set background=dark
 "let g:solarized_visibility="high"
 "colorscheme solarized "enable iterm2-solarized preset if you want to use it
  
-"colorscheme molokai
-colorscheme Tomorrow-Night-Eighties
+"colorscheme solarized
+"colorscheme Tomorrow-Night
 
+" No toolbars, menu or scrollbars in the GUI
+if has('gui')
+    if os == 'Darwin' || os == 'Mac'
+        set guifont=Source\ Code\ Pro:h13
+    endif
+	set vb t_vb=
+	set guioptions-=m  "no menu
+	set guioptions-=T  "no toolbar
+	set guioptions-=l
+	set guioptions-=L
+	set guioptions-=r  "no scrollbar
+	set guioptions-=R
+    colorscheme solarized
+end
 
+colorscheme molokai
 """""""""""""""""""""""""""""""""""""""""""""
 " Mappings, key bindings for plugins, etc.. "
 " ----------------------------------------- "
@@ -222,7 +226,6 @@ imap jj <ESC>
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
-
 map N Nzz
 map n nzz
 
@@ -244,6 +247,12 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
+" Keep cursor in place when we join files
+nnoremap J mzJ`z
+
+" Act like D and C
+nnoremap Y y$
+
 
 let g:ctrlp_cmd = 'CtrlP'			" Open it in most recenlty used mode (the most important option everyone want!)
 let g:ctrlp_working_path_mode = 'ra'	" search for nearest ancestor like .git, .hg, and the directory of the current file
@@ -254,3 +263,9 @@ let g:ctrlp_use_caching = 1				" enable caching
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' "chache dir
 let g:ctrlp_show_hidden = 1				" show me dotfiles
 let g:ctrlp_mruf_max = 250				" number of recenytly opened files
+
+" vim-coffee-plugin
+"
+let g:coffee_compiler = '/usr/local/share/npm/bin/coffee'
+let g:coffee_linter = '/usr/local/share/npm/bin/coffeelint'
+let g:coffee_lint_options = '-f lint.json'
