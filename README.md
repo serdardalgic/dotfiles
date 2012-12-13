@@ -18,3 +18,13 @@ Uninstall:
 
     cd dotfiles
     make clean
+
+# Warning for Ubuntu 12.04 users:
+
+There is no solarized theme in ubuntu 12.04, thus when you first open vim, it
+will give errors. Just comment out the "colorscheme solarized" lines.
+
+In case your submodules are not loaded, go to the root directory of this repo
+and run this command:
+
+    git submodule update --init
