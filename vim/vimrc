@@ -23,7 +23,7 @@ set ignorecase                  " Search incase sensitive
 set ruler                       " show line and column number
 set wildmenu					" command line tab completion, more superior
 set wildmode=list:full			" type :h wildmode for more info about list options
-set history=100                 " Number of lines of command line history.
+set history=1000                " Number of lines of command line history.
 
 set noerrorbells                " No beeps
 set gdefault                    " Use 'g' flag by default with :s/foo/bar/.
@@ -140,13 +140,13 @@ end
 
 
 "Until we fix solarized on linux use this
-if os == 'Linux'
-  colorscheme molokai
-endif
-
-if os == 'Darwin' || os == 'Mac'
-  colorscheme solarized
-endif
+"if os == 'Linux'
+"  colorscheme molokai
+"endif
+"
+"if os == 'Darwin' || os == 'Mac'
+"  colorscheme solarized
+"endif
 
 """""""""""""""""""""""""""""""""""""""""""""
 " Mappings, key bindings for plugins, etc.. "
