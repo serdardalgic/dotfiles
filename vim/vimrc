@@ -352,3 +352,5 @@ let g:pymode_folding = 0                 " Do not automatically fold
 let g:Tlist_WinWidth = 50
 let g:Tlist_Use_Right_Window = 1
 let g:Tlist_Auto_Open = 1
+" Use F8 to cache  
+nnoremap <silent> <F8> :TlistToggle<CR>  
