@@ -349,3 +349,6 @@ let g:pymode_virtualenv = 1              " Auto fix vim python paths if virtuale
 let g:pymode_folding = 0                 " Do not automatically fold
 
 " -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- "
+let g:Tlist_WinWidth = 50
+let g:Tlist_Use_Right_Window = 1
+let g:Tlist_Auto_Open = 1
