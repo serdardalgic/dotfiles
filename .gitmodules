@@ -50,10 +50,6 @@
 	path = vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 	ignore = dirty
-[submodule "vim/bundle/vim-coffee-script"]
-	path = vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-	ignore = dirty
 [submodule "vim/bundle/vim-nerdtree"]
 	path = vim/bundle/vim-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -77,10 +73,6 @@
 [submodule "vim/bundle/vim-indent-guides"]
 	path = vim/bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
-	ignore = dirty
-[submodule "vim/bundle/vim-golang"]
-	path = vim/bundle/vim-golang
-	url = https://github.com/jnwhiteh/vim-golang.git
 	ignore = dirty
 [submodule "vim/bundle/vim-python-mode"]
 	path = vim/bundle/vim-python-mode
