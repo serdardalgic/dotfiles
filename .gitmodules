@@ -82,3 +82,7 @@
 	path = vim/bundle/vim-golang
 	url = https://github.com/jnwhiteh/vim-golang.git
 	ignore = dirty
+[submodule "vim/bundle/vim-taglist"]
+	path = vim/bundle/vim-taglist
+    url = https://github.com/vim-scripts/taglist.vim.git
+    ignore = dirty
