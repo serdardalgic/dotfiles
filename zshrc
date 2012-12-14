@@ -9,7 +9,8 @@ ZSH=$HOME/.oh-my-zsh
 # Check https://github.com/robbyrussell/oh-my-zsh/wiki/themes for details
 #
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="random"
+ZSH_THEME="re5et"
+#ZSH_THEME="random"
 #ZSH_THEME="aussiegeek"
 #ZSH_THEME="bira" # good for using rvm
 
