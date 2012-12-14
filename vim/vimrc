@@ -262,7 +262,7 @@ nnoremap J mzJ`z
 nnoremap Y y$
 
 
-let g:ctrlp_cmd = 'CtrlP'			" Open it in most recently used mode (the most important option everyone want!)
+let g:ctrlp_cmd = 'CtrlP'	    		" Open it in most recently used mode (the most important option everyone want!)
 let g:ctrlp_working_path_mode = 'ra'	" search for nearest ancestor like .git, .hg, and the directory of the current file
 let g:ctrlp_match_window_bottom = 1		" show the match window at the top of the screen:
 let g:ctrlp_max_height = 10				" maxiumum height of match window
@@ -277,3 +277,75 @@ let g:ctrlp_mruf_max = 250				" number of recently opened files
 let g:coffee_compiler = '/usr/local/share/npm/bin/coffee'
 let g:coffee_linter = '/usr/local/share/npm/bin/coffeelint'
 let g:coffee_lint_options = '-f lint.json'
+
+" -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- "
+
+""" python-mode plugin settings
+"""
+let g:pymode_lint_write = 0             " Disable pylint checking every save
+let g:pymode_run_key = 'R'              " Set key 'R' for run python code
+
+" Show documentation
+let g:pymode_doc = 1                    " Load show documentation plugin
+let g:pymode_doc_key = 'K'              " Key for show python documentation
+
+" Run python code
+let g:pymode_run = 1                    " Load run code plugin
+let g:pymode_run_key = '<leader>r'      " Key for run python code
+
+" Code checking 
+let g:pymode_lint = 1                   " Load pylint code plugin
+
+" Switch pylint, pyflakes, pep8, mccabe code-checkers
+" Can have multiply values "pep8,pyflakes,mcccabe"
+let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
+
+" Skip errors and warnings
+" E.g. "E501,W002", "E2,W" (Skip all Warnings and Errors startswith E2) and etc
+"let g:pymode_lint_ignore = "E501"
+
+" Select errors and warnings
+" E.g. "E4,W"
+"let g:pymode_lint_select = ""
+
+"let g:pymode_lint_onfly = 0           " Run linter on the fly
+
+" Pylint configuration file
+" If file not found use 'pylintrc' from python-mode plugin directory
+let g:pymode_lint_config = "$HOME/.pylintrc"
+
+"let g:pymode_lint_cwindow = 1           " Auto open cwindow if errors be finded
+let g:pymode_lint_message = 1            " Show error message if cursor placed at the error line
+let g:pymode_lint_jump = 0               " Auto jump on first error
+let g:pymode_lint_hold = 0               " Hold cursor in current window when quickfix is open
+let g:pymode_lint_signs = 1              " Place error signs
+let g:pymode_lint_mccabe_complexity = 8  " Maximum allowed mccabe complexity
+
+let g:pymode_lint_minheight = 3          " Minimal height of pylint error window
+let g:pymode_lint_maxheight = 6          " Maximal height of pylint error window
+
+""" ROPE PLUGIN in python-mode 
+let g:pymode_rope = 1                    " Load rope plugin
+let g:pymode_rope_auto_project = 1       " Auto create and open ropeproject
+let g:pymode_rope_enable_autoimport = 1  " Enable autoimport
+let g:pymode_rope_autoimport_generate = 1 " Auto generate global cache
+let g:pymode_rope_autoimport_underlineds = 0 
+let g:pymode_rope_codeassist_maxfixes = 10
+let g:pymode_rope_sorted_completions = 1
+let g:pymode_rope_extended_complete = 1
+let g:pymode_rope_autoimport_modules = ["os","shutil","datetime"]
+let g:pymode_rope_confirm_saving = 1
+let g:pymode_rope_global_prefix = "<C-x>p"
+let g:pymode_rope_local_prefix = "<C-c>r"
+let g:pymode_rope_vim_completion = 1
+let g:pymode_rope_guess_project = 1
+let g:pymode_rope_goto_def_newwin = ""
+let g:pymode_rope_always_show_complete_menu = 0
+
+let g:pymode_utils_whitespaces = 1       " Autoremove unused whitespaces
+let g:pymode_indent = 1                  " Enable pymode indentation
+
+let g:pymode_virtualenv = 1              " Auto fix vim python paths if virtualenv enabled
+let g:pymode_folding = 0                 " Do not automatically fold
+
+" -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- "
