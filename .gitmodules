@@ -82,3 +82,7 @@
 	path = vim/bundle/vim-golang
 	url = https://github.com/jnwhiteh/vim-golang.git
 	ignore = dirty
+[submodule "vim/bundle/vim-python-mode"]
+	path = vim/bundle/vim-python-mode
+    url = https://github.com/klen/python-mode.git
+    ignore = dirty
