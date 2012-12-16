@@ -13,7 +13,7 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
-# Give the short commit hash, used as git gimme HEAD, git gimme HEAD~2 etc..
+# Give the short commit hash, used as git sha HEAD, git sha HEAD~2 etc..
     sha = "!sh -c 'git rev-parse --short \"$1\"' -"
 # Show files ignored by git:
     ign = ls-files -o -i --exclude-standard
