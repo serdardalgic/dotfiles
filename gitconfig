@@ -40,3 +40,5 @@
 	editor = vim
 #[credential]
 #	helper = osxkeychain
+[github]
+	user = serdardalgic
