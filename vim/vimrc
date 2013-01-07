@@ -85,6 +85,8 @@ autocmd FileType markdown set expandtab "Use spaces for tabs, a requirement by m
 autocmd FileType markdown set shiftwidth=4
 
 " Python stuff
+" Wrap the lines to 80 characters
+set tw=80
 autocmd FileType python let python_highlight_all = 1
 autocmd FileType python let python_slow_sync = 1
 autocmd FileType python set omnifunc=pythoncomplete#Complete
