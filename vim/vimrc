@@ -227,6 +227,8 @@ endif
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$'] "
 
 " open a NERDTree automatically when vim starts up if no files were specified
+" WARNING: this f*cks up when I use diff -u hede hodo | vi -
+"   we should find a solution for this ;)
 autocmd vimenter * if !argc() | NERDTree | endif
 
 " Just go out in insert mode
