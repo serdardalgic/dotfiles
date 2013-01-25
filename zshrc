@@ -49,13 +49,17 @@ COMPLETION_WAITING_DOTS="true"
 #
 # CHECKOUT history-substring-search, virtualenvwrapper plugins
 #
-plugins=(git git-extras extract autojump command-not-found debian encode64 history lol pip vagrant themes urltools zsh-syntax-highlighting)
+plugins=(git git-extras extract autojump command-not-found debian encode64 history lol pip vagrant themes urltools zsh-syntax-highlighting autoenv)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/serdar/.rvm/bin
 
+# Needed for virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
+# Uncomment these, 'cause we are doing source activate.sh in lib/directories.sh
+# source activate.sh for autoenv
+# source ~/.autoenv/activate.sh
