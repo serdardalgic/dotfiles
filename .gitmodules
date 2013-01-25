@@ -84,3 +84,6 @@
 [submodule "vim/bundle/webapi-vim"]
 	path = vim/bundle/webapi-vim
 	url = https://github.com/mattn/webapi-vim.git
+[submodule ".autoenv"]
+	path = .autoenv
+	url = https://github.com/kennethreitz/autoenv.git
