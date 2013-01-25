@@ -46,7 +46,10 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras extract autojump command-not-found debian encode64 lol pip vagrant virtualenv themes urltools zsh-syntax-highlighting)
+#
+# CHECKOUT history-substring-search, virtualenvwrapper plugins
+#
+plugins=(git git-extras extract autojump command-not-found debian encode64 history lol pip vagrant themes urltools zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,4 +59,3 @@ export PATH=/usr/local/bin:/usr/local/sbin:~/bin:/usr/lib/lightdm/lightdm:/usr/l
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-alias http='python -m SimpleHTTPServer'
