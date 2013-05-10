@@ -47,9 +47,12 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #
-# CHECKOUT history-substring-search, virtualenvwrapper plugins
+# CHECKOUT history-substring-search, virtualenvwrapper, fasd, jira plugins
+# No-need-to-use:
 #
-plugins=(git git-extras extract autojump command-not-found debian encode64 history lol pip vagrant themes urltools zsh-syntax-highlighting autoenv)
+# django : Instead, install django-extensions.
+#
+plugins=(git git-extras gitfast colored-man colorize extract autojump command-not-found debian encode64 history lol pip vagrant themes urltools zsh-syntax-highlighting autoenv python nyan redis-cli)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,3 +66,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Uncomment these, 'cause we are doing source activate.sh in lib/directories.sh
 # source activate.sh for autoenv
 # source ~/.autoenv/activate.sh
+
+# UA_PARSER_YAML environment variable is used by ua_parser.
+export UA_PARSER_YAML=$HOME/ua_parser_regexes.yaml
