@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 #
 # django : Instead, install django-extensions.
 #
-plugins=(git git-extras gitfast colored-man colorize extract autojump command-not-found debian encode64 history lol pip vagrant themes urltools zsh-syntax-highlighting autoenv python nyan redis-cli web-search)
+plugins=(git git-extras gitfast colored-man colorize extract autojump command-not-found debian encode64 history lol pip vagrant themes urltools zsh-syntax-highlighting autoenv python nyan redis-cli web-search celery rand-quote jira)
 
 source $ZSH/oh-my-zsh.sh
 
