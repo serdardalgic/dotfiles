@@ -265,7 +265,8 @@ nnoremap J mzJ`z
 " Act like D and C
 nnoremap Y y$
 
-
+" Ctrlp Plugin
+"
 let g:ctrlp_cmd = 'CtrlP'	    		" Open it in most recently used mode (the most important option everyone want!)
 let g:ctrlp_working_path_mode = 'ra'	" search for nearest ancestor like .git, .hg, and the directory of the current file
 let g:ctrlp_match_window_bottom = 1		" show the match window at the top of the screen:
