@@ -93,6 +93,8 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
 autocmd FileType python set completeopt=menu
 autocmd FileType python set expandtab              " Tabs are converted to spaces
+" Open Tagbar only with python files. See Tagbar part for details.
+autocmd FileType python nested :TagbarOpen
 
 autocmd BufRead,BufNewFile *.go set filetype=go
 
@@ -200,10 +202,15 @@ map <MouseMiddle> <Esc>"*p
 " Autoclose Plugin
 let g:AutoClosePairs_add = "\" '"  "add quotes to autoclose plugin
 
+" Tagbar Plugin
 if os == 'Linux'
 	nmap <leader>b :TagbarToggle<CR>
 	let g:tagbar_autofocus = 1
 endif
+" Only open Tagbar when used with python files. See python specific part for
+" this.
+"autocmd VimEnter * nested :TagbarToggle
+"TODO: <F8> tagbar and TagbarToggle tagbar are not the same, take a look at it
 
 " Open gundo
 nnoremap <leader>g :GundoToggle<CR>
@@ -219,7 +226,7 @@ endif
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$'] "
 
 " open a NERDTree automatically when vim starts up if no files were specified
-" WARNING: this f*cks up when I use diff -u hede hodo | vi -
+" TODO: this f*cks up when I use diff -u hede hodo | vi -
 "   we should find a solution for this ;)
 autocmd vimenter * if !argc() | NERDTree | endif
 
