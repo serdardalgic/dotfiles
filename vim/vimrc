@@ -129,6 +129,7 @@ set background=dark
 if has('gui')
     if os == 'Darwin' || os == 'Mac'
         set guifont=Source\ Code\ Pro:h13
+        colorscheme solarized
     endif
 	set vb t_vb=
 	set guioptions-=m  "no menu
@@ -137,18 +138,7 @@ if has('gui')
 	set guioptions-=L
 	set guioptions-=r  "no scrollbar
 	set guioptions-=R
-    colorscheme solarized
 end
-
-
-"Until we fix solarized on linux use this
-"if os == 'Linux'
-"  colorscheme molokai
-"endif
-"
-"if os == 'Darwin' || os == 'Mac'
-"  colorscheme solarized
-"endif
 
 """""""""""""""""""""""""""""""""""""""""""""
 " Mappings, key bindings for plugins, etc.. "
