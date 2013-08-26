@@ -138,8 +138,50 @@ area and Gist it.
     TODO: It can be configured better ;) No configurations in vimrc yet.
 
 *****************************************************************************
+[submodule "vim/bundle/vim-nerdtree"]
+    https://github.com/scrooloose/nerdtree.git
+
+    Opened with <leader>n a.k.a. ,n It is used to navigate in the file system.
+    * Automatically opened when no files were specified.
+    In the NerdTree:
+    For the files::
+    * o --> for opening on the prev. window
+    * go --> for preview
+    * t --> open in new tab and focus on the opened file,
+    * T --> open in new, do not focus on the newly opened file (open silently)
+    * i --> open horizontally split, gi --> preview horizontally split
+    * s --> open vertically split, gs --> preview vertically split 
+
+    For the directories::
+    * o --> Open/close node
+    * O --> recursively open node
+    * x --> close parent of node
+    * X --> close all child nodes of current node recursively
+    * P --> go to root
+    * p --> go to parent
+    * K --> go to first child
+    * J --> go to last child
+    * <C-j> --> go to next sibling
+    * <C-k> --> go to prev sibling
+
+    Navigation:
+    * C --> change tree root to the selected dir
+    * u --> move tree root up a dir
+    * U --> move tree root up a dir but leave old root open
+    
+    
+
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************
 [submodule "vim/bundle/vim-markdown"]
     http://github.com/tpope/vim-markdown
+
+    Markdown specific extension. We still have markdown changes in vimrc, and it
+    works. So no need for this submodule..
 	
 *****************************************************************************
 *****************************************************************************
@@ -163,10 +205,6 @@ area and Gist it.
 [submodule "vim/bundle/xmledit"]
 	path = vim/bundle/xmledit
 	url = https://github.com/sukima/xmledit.git
-	ignore = dirty
-[submodule "vim/bundle/vim-nerdtree"]
-	path = vim/bundle/vim-nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
 	ignore = dirty
 [submodule "vim/bundle/vim-tmux"]
 	path = vim/bundle/vim-tmux
