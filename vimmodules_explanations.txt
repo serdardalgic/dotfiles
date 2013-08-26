@@ -1,0 +1,185 @@
+*****************************************************************************
+[submodule "vim/bundle/ack.vim"]
+    https://github.com/mileszs/ack.vim
+    
+    ack (ack-grep in debian) should be installed
+    let g:ackprg="ack -H -a -i --column" is set.
+    * -H ____ with filename
+    * -a ____ all types searched, ignoring CVS, .svn etc.
+    * -i ____ ignore-case
+    * --column ____ show the column number of the first match
+    ** -r, -R recursive option comes with default
+    
+    :Ack [options] {pattern} [{directory}] 
+    
+    AckAdd --> appends to the Ack list
+    AckFromSearch --> pattern from previous search
+
+    LAck and LAckAdd exists too, they open a location-list instead of 
+a quicklist. Other than this, does the same work with Ack. You can close the 
+quicklist window by pressing "q". For more keyboard mappings, write
+    :help ack-mappings
+
+    See http://betterthangrep.com/ for more information on Ack.    
+
+*****************************************************************************
+[submodule "vim/bundle/ctrlp"]
+    https://github.com/kien/ctrlp.vim
+
+    CtrlP to find and open a file.
+    Default usage is preferred, mapped to <c-p> (ctrl+p).
+    * Run :CtrlP or :CtrlP [starting-directory] to invoke CtrlP in find file mode.
+    * Run :CtrlPBuffer or :CtrlPMRU to invoke CtrlP in find buffer or find MRU file mode.
+    After invoking CtrlP:
+        * <c-r> for regex mode, <c-d> filename only search instead of full path
+        * <c-b> switch between modes: files, MRU files, buffers
+        * Use <c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
+        * <c-j> <c-k> for navigation up and down. Or Up-Down keys.
+        * <c-n> <c-p> for Ctrlp prompts' history.
+        * <c-z> mark files to open
+        * <c-y> If search is not found, create a new file and its parent directories.
+    * You can close the CtrlP window with Esc or <c-c>
+    
+    Check  "Ctrlp Plugin" Section of vimrc for details.
+    
+*****************************************************************************
+[submodule "vim/bundle/gist-vim"]
+    https://github.com/mattn/gist-vim
+
+    First you should set you github user in gitconfig:
+        git config --global github.user Your_username
+    * Post current buffer to Gist, by :Gist command. You can also select some
+area and Gist it.
+    * :Gist -p --> private gist, Gist -P --> Public gist (default)
+    * :Gist -a --> anonymously create gist
+    * :Gist -m --> Create a gist with all open buffers
+    * :Gist -l --> List your public gists
+    * :Gist -l username --> List the user "username"s public gists
+
+    In order to use this plugin, curl and web-api vim module  must be installed
+    in your system.
+
+[submodule "vim/bundle/webapi-vim"]
+    https://github.com/mattn/webapi-vim
+
+*****************************************************************************
+[submodule "vim/bundle/gundo"]
+    https://github.com/sjl/gundo.vim
+    http://sjl.bitbucket.org/gundo.vim/
+
+    Graphical Vim Undo Tree
+
+    The change in vimrc file:
+    " Open gundo
+    nnoremap <leader>g :GundoToggle<CR>
+
+    So, <leader>g which is currently ,g opens the Gundo tree on the left side.
+
+*****************************************************************************
+[submodule "vim/bundle/nerdcommenter"]
+	https://github.com/scrooloose/nerdcommenter
+
+    For a strong commenting action in many languages. 
+    * I frequently use <Leader>c<space> for commenting in/out. 
+    * Another option, selecting lines in visual mode, and then <Leader>c<space>
+
+    Current Leader is ,
+    So ,c<space> comments in/out.
+
+*****************************************************************************
+[submodule "vim/bundle/supertab-continued"]
+    https://github.com/vim-scripts/SuperTab-continued.
+    
+    Gidebilir, bilemedim.
+    Alternatif olarak YouCompleteMe'ye bakıcam.
+
+
+*****************************************************************************
+[submodule "vim/bundle/tagbar"]
+    https://github.com/majutsushi/tagbar
+
+    http://majutsushi.github.io/tagbar/
+
+    Mapped to ,b in vimrc, but ,b puts a breakpoint in python configuration, so
+    while writing python code, <F8> is used to open tagbar.
+
+    It shows the class outline. When Tagbar is opened, press <F1> for details.
+
+    Dependencies: 
+    * exuberant-ctags 5.5 or higher
+    * vim 7.0 or higher.
+
+*****************************************************************************
+[submodule "vim/bundle/vim-autoclose"]
+    https://github.com/Townk/vim-autoclose
+
+    echo g:AutoClosePairs 
+    shows which elements are included in AutoClose. 
+    helps to Automatically close stuff, extremely helpful while coding ;)
+
+*****************************************************************************
+[submodule "vim/bundle/vim-colors-solarized"]
+    https://github.com/altercation/vim-colors-solarized.git
+
+    TODO: It is problematic right now, checkout later ;)
+
+*****************************************************************************
+[submodule "vim/bundle/vim-fugitive"]
+    http://github.com/tpope/vim-fugitive
+
+    A powerful git wrapper that I don't use frequently :) 
+    TODO: Take a look at it, ASAP.
+
+*****************************************************************************
+[submodule "vim/bundle/vim-indent-guides"]
+    https://github.com/nathanaelkane/vim-indent-guides.git
+    Shows indentation guides when <Leader>ig is pressed.
+    In our case, it is ",ig" 
+    TODO: It can be configured better ;) No configurations in vimrc yet.
+
+*****************************************************************************
+[submodule "vim/bundle/vim-markdown"]
+    http://github.com/tpope/vim-markdown
+	
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************
+	
+
+[submodule "vim/bundle/vim-powerline"]
+	path = vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+	ignore = dirty
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+	ignore = dirty
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+	ignore = dirty
+
+
+[submodule "vim/bundle/xmledit"]
+	path = vim/bundle/xmledit
+	url = https://github.com/sukima/xmledit.git
+	ignore = dirty
+[submodule "vim/bundle/vim-nerdtree"]
+	path = vim/bundle/vim-nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+	ignore = dirty
+[submodule "vim/bundle/vim-tmux"]
+	path = vim/bundle/vim-tmux
+	url = https://github.com/tejr/vim-tmux.git
+	ignore = dirty
+[submodule "vim/bundle/vim-python-mode"]
+	path = vim/bundle/vim-python-mode
+    url = https://github.com/klen/python-mode.git
+    ignore = dirty
+[submodule "vim/bundle/vim-taglist"]
+	path = vim/bundle/vim-taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
+    ignore = dirty
+[submodule ".autoenv"]
+	path = .autoenv
+	url = https://github.com/kennethreitz/autoenv.git
