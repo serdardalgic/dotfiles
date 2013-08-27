@@ -67,8 +67,6 @@ set nobackup            " Dont create annoying backup files
 "make vim save and load the folding of the document each time it loads"
 ""also places the cursor in the last place that it was left."
 set viewdir=/tmp
-"au BufWinLeave * mkview
-"au VimEnter * silent! loadview
 
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
@@ -94,7 +92,7 @@ autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
 autocmd FileType python set completeopt=menu
 autocmd FileType python set expandtab              " Tabs are converted to spaces
 " Open Tagbar only with python files. See Tagbar part for details.
-autocmd FileType python nested :TagbarOpen
+autocmd FileType python nested :TagbarToggle
 
 autocmd BufRead,BufNewFile *.go set filetype=go
 
@@ -191,6 +189,7 @@ nmap <leader>q :q!<cr>
 nmap <leader>wq :wq!<cr>
 
 " Save fold settings, open/close folds easily with spacebar
+" TODO: Doesn't work
 nnoremap <space> zz
 
 " Move up and down on splitted lines (on small width screens)
@@ -277,33 +276,26 @@ let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' "cache dir
 let g:ctrlp_show_hidden = 1				" show me dotfiles
 let g:ctrlp_mruf_max = 250				" number of recently opened files
 
-" vim-coffee-plugin
-"
-let g:coffee_compiler = '/usr/local/share/npm/bin/coffee'
-let g:coffee_linter = '/usr/local/share/npm/bin/coffeelint'
-let g:coffee_lint_options = '-f lint.json'
-
 " -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- "
 
 """ python-mode plugin settings
 """
-let g:pymode_lint_write = 1             " Enable pylint checking every save
-let g:pymode_run_key = 'R'              " Set key 'R' for run python code
+let g:pymode_lint_write = 1             " Enable pylint checking every save. DEFAULT 1
 
 " Show documentation
-let g:pymode_doc = 1                    " Load show documentation plugin
-let g:pymode_doc_key = 'K'              " Key for show python documentation
+let g:pymode_doc = 1                    " Load show documentation plugin. DEFAULT 1
+let g:pymode_doc_key = 'K'              " Key for show python documentation. DEFAULT 'K'
 
 " Run python code
-let g:pymode_run = 1                    " Load run code plugin
-let g:pymode_run_key = '<leader>r'      " Key for run python code
+let g:pymode_run = 1                    " Load run code plugin. DEFAULT 1
+let g:pymode_run_key = '<leader>r'      " Key for run python code. DEFAULT '<leader>r'
 
 " Code checking 
-let g:pymode_lint = 1                   " Load pylint code plugin
+let g:pymode_lint = 1                   " Load pylint code plugin. DEFAULT 1
 
-" Switch pylint, pyflakes, pep8, mccabe code-checkers
+" Switch pylint, pyflakes, pep8, mccabe code-checkers.
 " Can have multiply values "pep8,pyflakes,mcccabe"
-let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
+let g:pymode_lint_checker = "pyflakes,pep8,mccabe"      " DEFAULT is \"pyflakes,pep8,mccabe\"
 
 " Skip errors and warnings
 " E.g. "E501,W002", "E2,W" (Skip all Warnings and Errors startswith E2) and etc
@@ -313,21 +305,18 @@ let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
 " E.g. "E4,W"
 "let g:pymode_lint_select = ""
 
-"let g:pymode_lint_onfly = 0           " Run linter on the fly
-
 " Pylint configuration file
 " If file not found use 'pylintrc' from python-mode plugin directory
-let g:pymode_lint_config = "$HOME/.pylintrc"
+let g:pymode_lint_config = "$HOME/.pylintrc"            " DEFAULT is \"$HOME/.pylintrc\"
 
-"let g:pymode_lint_cwindow = 1           " Auto open cwindow if errors be finded
-let g:pymode_lint_message = 1            " Show error message if cursor placed at the error line
-let g:pymode_lint_jump = 0               " Auto jump on first error
-let g:pymode_lint_hold = 0               " Hold cursor in current window when quickfix is open
-let g:pymode_lint_signs = 1              " Place error signs
-let g:pymode_lint_mccabe_complexity = 8  " Maximum allowed mccabe complexity
+let g:pymode_lint_message = 1            " Show error message if cursor placed at the error line. DEFAULT 1
+let g:pymode_lint_jump = 0               " Auto jump on first error. DEFAULT 0
+let g:pymode_lint_hold = 0               " Hold cursor in current window when quickfix is open. DEFAULT 0
+let g:pymode_lint_signs = 1              " Place error signs. DEFAULT 1
+let g:pymode_lint_mccabe_complexity = 8  " Maximum allowed mccabe complexity. DEFAULT 8
 
-let g:pymode_lint_minheight = 3          " Minimal height of pylint error window
-let g:pymode_lint_maxheight = 6          " Maximal height of pylint error window
+let g:pymode_lint_minheight = 3          " Minimal height of pylint error window. DEFAULT 3
+let g:pymode_lint_maxheight = 6          " Maximal height of pylint error window. DEFAULT 6
 
 """ ROPE PLUGIN in python-mode 
 let g:pymode_rope = 1                    " Load rope plugin
@@ -353,9 +342,12 @@ let g:pymode_indent = 1                  " Enable pymode indentation
 let g:pymode_virtualenv = 1              " Auto fix vim python paths if virtualenv enabled
 let g:pymode_folding = 0                 " Do not automatically fold
 
+let g:pymode_breakpoint = 1              " Enable breakpoint script
+"let g:pymode_breakpoint_key = '<leader>bb' " TODO: Re-decide which will be breakpoint key.
+
 " -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- "
-let g:Tlist_WinWidth = 50
-let g:Tlist_Use_Right_Window = 1
-"let g:Tlist_Auto_Open = 1
-" Use F8 to cache  
-nnoremap <silent> <F8> :TlistToggle<CR>  
+"let g:Tlist_WinWidth = 50
+"let g:Tlist_Use_Right_Window = 1
+""let g:Tlist_Auto_Open = 1
+"" Use F8 to cache  
+"nnoremap <silent> <F8> :TlistToggle<CR>  
