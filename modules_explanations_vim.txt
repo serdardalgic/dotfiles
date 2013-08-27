@@ -168,10 +168,23 @@ area and Gist it.
     * C --> change tree root to the selected dir
     * u --> move tree root up a dir
     * U --> move tree root up a dir but leave old root open
-    
-    
+
+    When the NerdTree is opened, ? for details.
 
 *****************************************************************************
+[submodule "vim/bundle/vim-powerline"]
+    https://github.com/Lokaltog/vim-powerline.git
+
+    These following configurations are set in vimrc.
+
+    set nocompatible   " Disable vi-compatibility
+    set laststatus=2   " Always show the statusline
+    set encoding=utf-8 " Necessary to show Unicode glyphs
+
+    Powerline_symbols is set too, If you encounter any problems, remove this
+    line from your vimrc.
+    let g:Powerline_symbols = 'unicode'
+
 *****************************************************************************
 *****************************************************************************
 *****************************************************************************
@@ -188,10 +201,6 @@ area and Gist it.
 *****************************************************************************
 	
 
-[submodule "vim/bundle/vim-powerline"]
-	path = vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-	ignore = dirty
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git

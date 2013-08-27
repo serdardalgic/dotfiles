@@ -118,6 +118,9 @@ endif
 syntax enable                   " syntax formatting for languages
 set background=dark
 
+" Powerline
+let g:Powerline_symbols = 'unicode'
+
 "set t_Co=256                    " set to 256 color mode if the console supports it
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256
