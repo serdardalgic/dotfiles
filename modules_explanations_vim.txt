@@ -169,7 +169,7 @@ area and Gist it.
     * u --> move tree root up a dir
     * U --> move tree root up a dir but leave old root open
 
-    When the NerdTree is opened, ? for details.
+    When the NerdTree is opened, press ? for details.
 
 *****************************************************************************
 [submodule "vim/bundle/vim-powerline"]
@@ -186,6 +186,9 @@ area and Gist it.
     let g:Powerline_symbols = 'unicode'
 
 *****************************************************************************
+[submodule "vim/bundle/vim-python-mode"]
+    https://github.com/klen/python-mode.git
+
 *****************************************************************************
 *****************************************************************************
 *****************************************************************************
