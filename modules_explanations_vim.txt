@@ -100,8 +100,7 @@ area and Gist it.
 
     http://majutsushi.github.io/tagbar/
 
-    Mapped to ,b in vimrc, but ,b puts a breakpoint in python configuration, so
-    while writing python code, <F8> is used to open tagbar.
+    TagbarToggle mapped to ,t in vimrc
 
     It shows the class outline. When Tagbar is opened, press <F1> for details.
 
@@ -189,6 +188,61 @@ area and Gist it.
 [submodule "vim/bundle/vim-python-mode"]
     https://github.com/klen/python-mode.git
 
+    Prominent configurations are:
+
+    * let g:pymode_run_key = '<leader>r'
+        " Key for run python code. DEFAULT '<leader>r'
+    * let g:pymode_lint_write = 1     
+        " Enable pylint checking every save. DEFAULT 1
+    * let g:pymode_lint_ignore = "E501"
+        " You can add error or warnings to be skipped to here. Currently, None.
+    * let g:pymode_lint_select = ""
+        " Only show selected error or warnings. Currently, None.
+
+    Check :PyLintAuto vim command for automatically fixing the pep8 errors in
+    the bufferzone.
+    Check :help PythonModeCommands for details of python-mode commands:
+        :Pydoc <args>
+        :PyLint
+        :PyLintAuto
+        :PyRun
+
+    Check :help PythonModeKeys for details of python-mode keys. 
+
+
+*****************************************************************************
+[submodule "vim/bundle/vim-surround"]
+    https://github.com/tpope/vim-surround.git
+
+    For doing surrounding stuff.. See :help surround for details.
+
+    ds --> delete surroundings, one argument 
+    cs --> change surroundings, two arguments
+    ys --> You surround, takes a Vim motion or text object, wraps it with the
+    second argument.
+
+    TARGETS:
+    See :help surround-targets for further details.
+
+    Eight punctuation marks, (, ), {, }, [, ], <, and >, represent themselves
+    and their counterparts.  If the opening mark is used, contained whitespace is
+    also trimmed.  The targets b, B, r, and a are aliases for ), }, ], and > 
+    (the first two mirror Vim; the second two are completely arbitrary and
+    subject to change).
+
+[submodule "vim/bundle/vim-repeat"]
+    https://github.com/tpope/vim-repeat.git
+    Dependency of vim-surround
+
+*****************************************************************************
+[submodule "vim/bundle/xmledit"]
+    https://github.com/sukima/xmledit
+
+    Makes it easier to edit xml files. Autoclosing the tags, completion stuff
+    etc..
+
+*****************************************************************************
+*****************************************************************************
 *****************************************************************************
 *****************************************************************************
 *****************************************************************************
@@ -204,24 +258,8 @@ area and Gist it.
 *****************************************************************************
 	
 
-[submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
-	ignore = dirty
-[submodule "vim/bundle/vim-repeat"]
-	path = vim/bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
-	ignore = dirty
 
 
-[submodule "vim/bundle/xmledit"]
-	path = vim/bundle/xmledit
-	url = https://github.com/sukima/xmledit.git
-	ignore = dirty
-[submodule "vim/bundle/vim-tmux"]
-	path = vim/bundle/vim-tmux
-	url = https://github.com/tejr/vim-tmux.git
-	ignore = dirty
 [submodule "vim/bundle/vim-python-mode"]
 	path = vim/bundle/vim-python-mode
     url = https://github.com/klen/python-mode.git
