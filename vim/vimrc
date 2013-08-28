@@ -206,7 +206,7 @@ let g:AutoClosePairs_add = "\" '"  "add quotes to autoclose plugin
 
 " Tagbar Plugin
 if os == 'Linux'
-	nmap <leader>b :TagbarToggle<CR>
+	nmap <leader>t :TagbarToggle<CR>
 	let g:tagbar_autofocus = 1
 endif
 " Only open Tagbar when used with python files. See python specific part for
@@ -297,10 +297,6 @@ let g:pymode_lint = 1                   " Load pylint code plugin. DEFAULT 1
 " Can have multiply values "pep8,pyflakes,mcccabe"
 let g:pymode_lint_checker = "pyflakes,pep8,mccabe"      " DEFAULT is \"pyflakes,pep8,mccabe\"
 
-" Skip errors and warnings
-" E.g. "E501,W002", "E2,W" (Skip all Warnings and Errors startswith E2) and etc
-"let g:pymode_lint_ignore = "E501"
-
 " Select errors and warnings
 " E.g. "E4,W"
 "let g:pymode_lint_select = ""
@@ -319,8 +315,8 @@ let g:pymode_lint_minheight = 3          " Minimal height of pylint error window
 let g:pymode_lint_maxheight = 6          " Maximal height of pylint error window. DEFAULT 6
 
 """ ROPE PLUGIN in python-mode 
-let g:pymode_rope = 1                    " Load rope plugin
-let g:pymode_rope_auto_project = 1       " Auto create and open ropeproject
+let g:pymode_rope = 1                    " Load rope plugin. DEFAULT 1
+let g:pymode_rope_auto_project = 1       " Auto create and open ropeproject. DEFAULT
 let g:pymode_rope_enable_autoimport = 1  " Enable autoimport
 let g:pymode_rope_autoimport_generate = 1 " Auto generate global cache
 let g:pymode_rope_autoimport_underlineds = 0 
@@ -341,13 +337,3 @@ let g:pymode_indent = 1                  " Enable pymode indentation
 
 let g:pymode_virtualenv = 1              " Auto fix vim python paths if virtualenv enabled
 let g:pymode_folding = 0                 " Do not automatically fold
-
-let g:pymode_breakpoint = 1              " Enable breakpoint script
-"let g:pymode_breakpoint_key = '<leader>bb' " TODO: Re-decide which will be breakpoint key.
-
-" -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- "
-"let g:Tlist_WinWidth = 50
-"let g:Tlist_Use_Right_Window = 1
-""let g:Tlist_Auto_Open = 1
-"" Use F8 to cache  
-"nnoremap <silent> <F8> :TlistToggle<CR>  
