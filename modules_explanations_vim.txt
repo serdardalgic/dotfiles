@@ -69,6 +69,9 @@ area and Gist it.
 
     Graphical Vim Undo Tree
 
+    set undofile
+    must be set in your vimrc in order to use Gundo.
+
     The change in vimrc file:
     " Open gundo
     nnoremap <leader>g :GundoToggle<CR>
@@ -230,9 +233,12 @@ area and Gist it.
     (the first two mirror Vim; the second two are completely arbitrary and
     subject to change).
 
+*****************************************************************************
 [submodule "vim/bundle/vim-repeat"]
     https://github.com/tpope/vim-repeat.git
     Dependency of vim-surround
+
+    But more than this. TODO: write in details.
 
 *****************************************************************************
 [submodule "vim/bundle/xmledit"]
