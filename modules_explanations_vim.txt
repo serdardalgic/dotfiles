@@ -242,32 +242,3 @@ area and Gist it.
     etc..
 
 *****************************************************************************
-*****************************************************************************
-*****************************************************************************
-*****************************************************************************
-*****************************************************************************
-*****************************************************************************
-[submodule "vim/bundle/vim-markdown"]
-    http://github.com/tpope/vim-markdown
-
-    Markdown specific extension. We still have markdown changes in vimrc, and it
-    works. So no need for this submodule..
-	
-*****************************************************************************
-*****************************************************************************
-*****************************************************************************
-	
-
-
-
-[submodule "vim/bundle/vim-python-mode"]
-	path = vim/bundle/vim-python-mode
-    url = https://github.com/klen/python-mode.git
-    ignore = dirty
-[submodule "vim/bundle/vim-taglist"]
-	path = vim/bundle/vim-taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
-    ignore = dirty
-[submodule ".autoenv"]
-	path = .autoenv
-	url = https://github.com/kennethreitz/autoenv.git
