@@ -46,6 +46,10 @@
 	path = vim/bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
 	ignore = dirty
+[submodule "vim/bundle/vim-multicursor"]
+	path = vim/bundle/vim-multicursor
+	url = https://github.com/paradigm/vim-multicursor.git
+	ignore = dirty
 [submodule "vim/bundle/vim-nerdtree"]
 	path = vim/bundle/vim-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -72,8 +76,4 @@
 [submodule "vim/bundle/xmledit"]
 	path = vim/bundle/xmledit
 	url = https://github.com/sukima/xmledit.git
-	ignore = dirty
-[submodule "vim/bundle/vim-multicursor"]
-	path = vim/bundle/vim-multicursor
-	url = https://github.com/paradigm/vim-multicursor.git
 	ignore = dirty

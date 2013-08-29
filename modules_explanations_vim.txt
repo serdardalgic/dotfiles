@@ -79,6 +79,12 @@ area and Gist it.
     So, <leader>g which is currently ,g opens the Gundo tree on the left side.
 
 *****************************************************************************
+[submodule "vim/bundle/vim-multicursor"]
+    https://github.com/paradigm/vim-multicursor.git
+
+    For using multicursor in vim. TODO: study this plugin.
+*****************************************************************************
+
 [submodule "vim/bundle/nerdcommenter"]
 	https://github.com/scrooloose/nerdcommenter
 
