@@ -1,6 +1,7 @@
 [submodule ".autoenv"]
 	path = .autoenv
 	url = https://github.com/kennethreitz/autoenv.git
+	ignore = dirty
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
@@ -12,6 +13,7 @@
 [submodule "vim/bundle/gist-vim"]
 	path = vim/bundle/gist-vim
 	url = https://github.com/mattn/gist-vim
+	ignore = dirty
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
@@ -70,4 +72,8 @@
 [submodule "vim/bundle/xmledit"]
 	path = vim/bundle/xmledit
 	url = https://github.com/sukima/xmledit.git
+	ignore = dirty
+[submodule "vim/bundle/vim-multicursor"]
+	path = vim/bundle/vim-multicursor
+	url = https://github.com/paradigm/vim-multicursor.git
 	ignore = dirty
