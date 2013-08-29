@@ -1,3 +1,21 @@
+[submodule ".autoenv"]
+	path = .autoenv
+	url = https://github.com/kennethreitz/autoenv.git
+[submodule "vim/bundle/ack.vim"]
+	path = vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+	ignore = dirty
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
+	ignore = dirty
+[submodule "vim/bundle/gist-vim"]
+	path = vim/bundle/gist-vim
+	url = https://github.com/mattn/gist-vim
+[submodule "vim/bundle/gundo"]
+	path = vim/bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git
+	ignore = dirty
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
@@ -6,80 +24,50 @@
 	path = vim/bundle/supertab-continued
 	url = git://github.com/vim-scripts/SuperTab-continued..git
 	ignore = dirty
-[submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
-	url = git://github.com/tpope/vim-markdown.git
-	ignore = dirty
-[submodule "vim/bundle/vim-powerline"]
-	path = vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-	ignore = dirty
-[submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
-	ignore = dirty
-[submodule "vim/bundle/vim-repeat"]
-	path = vim/bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
 	ignore = dirty
 [submodule "vim/bundle/vim-autoclose"]
 	path = vim/bundle/vim-autoclose
 	url = https://github.com/Townk/vim-autoclose.git
 	ignore = dirty
-[submodule "vim/bundle/ctrlp"]
-	path = vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
-	ignore = dirty
-[submodule "vim/bundle/ack.vim"]
-	path = vim/bundle/ack.vim
-	url = https://github.com/mileszs/ack.vim.git
-	ignore = dirty
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-	ignore = dirty
-[submodule "vim/bundle/xmledit"]
-	path = vim/bundle/xmledit
-	url = https://github.com/sukima/xmledit.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
 	ignore = dirty
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 	ignore = dirty
+[submodule "vim/bundle/vim-indent-guides"]
+	path = vim/bundle/vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
+	ignore = dirty
 [submodule "vim/bundle/vim-nerdtree"]
 	path = vim/bundle/vim-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 	ignore = dirty
-[submodule "vim/bundle/gundo"]
-	path = vim/bundle/gundo
-	url = http://github.com/sjl/gundo.vim.git
-	ignore = dirty
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-	ignore = dirty
-[submodule "vim/bundle/vim-tmux"]
-	path = vim/bundle/vim-tmux
-	url = https://github.com/tejr/vim-tmux.git
-	ignore = dirty
-[submodule "vim/bundle/vim-indent-guides"]
-	path = vim/bundle/vim-indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim/bundle/vim-powerline"]
+	path = vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
 	ignore = dirty
 [submodule "vim/bundle/vim-python-mode"]
 	path = vim/bundle/vim-python-mode
     url = https://github.com/klen/python-mode.git
     ignore = dirty
-[submodule "vim/bundle/vim-taglist"]
-	path = vim/bundle/vim-taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
-    ignore = dirty
-[submodule "vim/bundle/gist-vim"]
-	path = vim/bundle/gist-vim
-	url = https://github.com/mattn/gist-vim
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+	ignore = dirty
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+	ignore = dirty
 [submodule "vim/bundle/webapi-vim"]
 	path = vim/bundle/webapi-vim
 	url = https://github.com/mattn/webapi-vim.git
-[submodule ".autoenv"]
-	path = .autoenv
-	url = https://github.com/kennethreitz/autoenv.git
+[submodule "vim/bundle/xmledit"]
+	path = vim/bundle/xmledit
+	url = https://github.com/sukima/xmledit.git
+	ignore = dirty
