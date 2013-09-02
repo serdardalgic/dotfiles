@@ -97,11 +97,29 @@ area and Gist it.
     So ,c<space> comments in/out.
 
 *****************************************************************************
-[submodule "vim/bundle/supertab-continued"]
-    https://github.com/vim-scripts/SuperTab-continued.
-    
-    Gidebilir, bilemedim.
-    Alternatif olarak YouCompleteMe'ye bakıcam.
+[submodule "vim/bundle/YouCompleteMe"]
+    https://github.com/Valloric/YouCompleteMe
+
+    You must have Vim 7.3.584 with python2 support. Ubuntu 13.04 has 7.3.547 (on
+    02.09.2013) so I had to compile Vim due to my needs. 
+
+    Building Vim from source:
+    https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+
+    I configured with these configurations:
+
+    ./configure --with-features=huge \
+        --prefix=/usr
+        --enable-cscope
+        --enable-pythoninterp
+        --with-python-config-dir=/usr/lib/python2.7/python2.7-config
+        --enable-gui=gtk2
+        --enable-rubyinterp
+        --enable-perlinterp
+        --enable-luainterp
+
+    And set vim as my default editor due to the building Vim documentation
+    above.
 
 
 *****************************************************************************
