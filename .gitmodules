@@ -77,3 +77,6 @@
 	path = vim/bundle/xmledit
 	url = https://github.com/sukima/xmledit.git
 	ignore = dirty
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
