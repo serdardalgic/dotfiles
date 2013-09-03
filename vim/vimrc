@@ -57,7 +57,7 @@ set wildignore=*.o,*.obj,*.bak,*.exe,*.so,*.la,*.out,*.pyc,*.swp
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab 
+set expandtab
 
 " Enable undo even if the file is closed
 set undofile
@@ -246,11 +246,11 @@ nnoremap <leader>. :lcd %:p:h<CR>
 set autochdir
 
 " save it with sudo again
-nnoremap <leader>ss :w !sudo tee %<CR>  
+nnoremap <leader>ss :w !sudo tee %<CR>
 
 " trim all whitespaces away
 " TODO:We may remove the following part, as it is accomplished with python-mode
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>       
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
@@ -263,7 +263,7 @@ nnoremap Y y$
 
 " Ctrlp Plugin
 "
-let g:ctrlp_cmd = 'CtrlP'	    		" Open it in most recently used mode (the most important option everyone want!)
+let g:ctrlp_cmd = 'CtrlPMixed'			" search anything (in files, buffers and MRU files at the same time.)
 let g:ctrlp_working_path_mode = 'ra'	" search for nearest ancestor like .git, .hg, and the directory of the current file
 let g:ctrlp_match_window_bottom = 1		" show the match window at the top of the screen:
 let g:ctrlp_max_height = 10				" maxiumum height of match window
@@ -287,7 +287,7 @@ let g:pymode_doc_key = 'K'              " Key for show python documentation. DEF
 let g:pymode_run = 1                    " Load run code plugin. DEFAULT 1
 let g:pymode_run_key = '<leader>r'      " Key for run python code. DEFAULT '<leader>r'
 
-" Code checking 
+" Code checking
 let g:pymode_lint = 1                   " Load pylint code plugin. DEFAULT 1
 
 " Switch pylint, pyflakes, pep8, mccabe code-checkers.
@@ -311,12 +311,12 @@ let g:pymode_lint_mccabe_complexity = 8  " Maximum allowed mccabe complexity. DE
 let g:pymode_lint_minheight = 3          " Minimal height of pylint error window. DEFAULT 3
 let g:pymode_lint_maxheight = 6          " Maximal height of pylint error window. DEFAULT 6
 
-""" ROPE PLUGIN in python-mode 
+""" ROPE PLUGIN in python-mode
 let g:pymode_rope = 1                    " Load rope plugin. DEFAULT 1
 let g:pymode_rope_auto_project = 1       " Auto create and open ropeproject. DEFAULT
 let g:pymode_rope_enable_autoimport = 1  " Enable autoimport
 let g:pymode_rope_autoimport_generate = 1 " Auto generate global cache
-let g:pymode_rope_autoimport_underlineds = 0 
+let g:pymode_rope_autoimport_underlineds = 0
 let g:pymode_rope_codeassist_maxfixes = 10
 let g:pymode_rope_sorted_completions = 1
 let g:pymode_rope_extended_complete = 1
@@ -337,3 +337,29 @@ let g:pymode_folding = 0                 " Do not automatically fold
 
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" This mapping makes Leader-Tab (,Tab) switch between tabs.
+" Leader-Shift-Tab(,-Shift-Tab) goes the other way.
+noremap <leader><Tab> :tabnext<CR>
+noremap <leader><S-Tab> :tabprev<CR>
+
+" switch between tabs with ,1, ,2,..."
+map <leader>1 1gt
+map <leader>2 2gt
+map <leader>3 3gt
+map <leader>4 4gt
+map <leader>5 5gt
+map <leader>6 6gt
+map <leader>7 7gt
+map <leader>8 8gt
+map <leader>9 9gt
+" insert mode
+imap <leader>1 <esc>1gt
+imap <leader>2 <esc>2gt
+imap <leader>3 <esc>3gt
+imap <leader>4 <esc>4gt
+imap <leader>5 <esc>5gt
+imap <leader>6 <esc>6gt
+imap <leader>7 <esc>7gt
+imap <leader>8 <esc>8gt
+imap <leader>9 <esc>9gt
