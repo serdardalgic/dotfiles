@@ -186,7 +186,7 @@ nmap <leader>wq :wq!<cr>
 
 " Save fold settings, open/close folds easily with spacebar
 " TODO: Doesn't work
-nnoremap <space> zz
+"nnoremap <space> zz
 
 " Move up and down on splitted lines (on small width screens)
 map <Up> gk
@@ -249,6 +249,7 @@ set autochdir
 nnoremap <leader>ss :w !sudo tee %<CR>  
 
 " trim all whitespaces away
+" TODO:We may remove the following part, as it is accomplished with python-mode
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>       
 
 " Start scrolling three lines before the horizontal window border
@@ -333,3 +334,6 @@ let g:pymode_indent = 1                  " Enable pymode indentation
 
 let g:pymode_virtualenv = 1              " Auto fix vim python paths if virtualenv enabled
 let g:pymode_folding = 0                 " Do not automatically fold
+
+let g:ycm_autoclose_preview_window_after_completion=1
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
