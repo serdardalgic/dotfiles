@@ -1,0 +1,57 @@
+,a          ---->   ack plugin
+<c-p>       ---->   Ctrlp plugin
+ 
+    <F1>
+    <F1>
+    <F1>
+    <C-j>
+    <C-k>
+    <C-h>
+    <C-l>
+    <Leader>a
+    <leader>w
+    <leader>q
+    <leader>wq
+    <Up>
+    <Down>
+    k
+    j
+    <MouseMiddle>
+    <leader>t
+    <leader>g
+    <leader>n
+    jj
+    N
+    n
+    zH
+    <leader>.
+    <leader>ss
+    <leader>W
+    J
+    Y
+
+Tab Navigation in Vim:
+---------------------
+<leader>g
+<leader><Tab>
+<leader><S-Tab>
+<leader>1
+<leader>2
+<leader>3
+<leader>4
+<leader>5
+<leader>6
+<leader>7
+<leader>8
+<leader>9
+<leader>1
+<leader>2
+<leader>3
+<leader>4
+<leader>5
+<leader>6
+<leader>7
+<leader>8
+<leader>9
+
+
