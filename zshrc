@@ -40,6 +40,10 @@ fi
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
+# In order to get solarized vim theme work with tmux configurations
+# add this tmux alias:
+alias tmux="TERM=screen-256color-bce tmux"
+
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
