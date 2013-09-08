@@ -1,12 +1,29 @@
 ## Personal dotfiles
 
-These are my personal dotfiles that I'm using on Linux. Thanks to Fatih Arslan
-for creating these configurations. I forked from his github repo, you can
-checkout his repo https://github.com/farslan/dotfiles for details.
+These are my personal dotfiles that I'm using on Linux. Originated from the
+first repository of Fatih Arslan's dotfiles: https://github.com/fatih/dotfiles
+later on, I've added my stuff. (Later on, Fatih created a unique project called
+Subvim: https://github.com/fatih/subvim) Thanks Fatih for his work ;)
+
+My configuration changed a lot since I've forked the dotfiles from Fatih's, so
+it is now a brand new project. 
+
+My dotfiles include:
+
+    * gitconfig
+    * tmuxconf
+    * zshrc
+    * vimrc and vim configurations under vim folder
 
 All vim plugins are added as a git submodule.
 
-zshrc is changed for using oh-my-zsh configuration.
+zshrc is changed for using oh-my-zsh configuration. See
+https://github.com/serdardalgic/oh-my-zsh for details. I'm holding my changes to
+a different branch called `mymaster` in my oh-my-zsh fork. I keep my version of
+oh-my-zsh installation frequently updated.
+
+I've taken some noted to modules_explanations_vim.txt file, I'll turn them into
+documentation a.s.a.p. 
 
 Install:
 
@@ -18,11 +35,6 @@ Uninstall:
 
     cd dotfiles
     make clean
-
-### Warning for Ubuntu 12.04 users:
-
-There is no solarized theme in ubuntu 12.04, thus when you first open vim, it
-will give errors. Just comment out the "colorscheme solarized" lines.
 
 In case your submodules are not loaded, go to the root directory of this repo
 and run this command:
