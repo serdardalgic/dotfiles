@@ -217,7 +217,7 @@ endif
 "TODO: <F8> tagbar and TagbarToggle tagbar are not the same, take a look at it
 
 " Open gundo
-nnoremap <leader>g :GundoToggle<CR>
+nnoremap <F5> :GundoToggle<CR>
 
 " Nerdtree plugin
 nmap <leader>n :NERDTreeToggle <CR>
