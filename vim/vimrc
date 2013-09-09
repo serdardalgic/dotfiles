@@ -114,6 +114,12 @@ endif
 " Color and Syntax "
 " ---------------- "
 syntax enable                   " syntax formatting for languages
+" Map <F7> for syntax on/off switching
+:map <F7> :if exists("g:syntax_on") <Bar>
+    \   syntax off <Bar>
+    \ else <Bar>
+    \   syntax enable <Bar>
+    \ endif <CR>
 set background=dark
 set t_Co=256                    " set to 256 color mode if the console supports it
 let g:solarized_termtrans=1
