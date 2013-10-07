@@ -171,6 +171,9 @@ let g:mapleader = ","
 set makeprg=make
 set showfulltag
 
+" Shortcut for removing a file in vim
+nnoremap <leader>Rm :call delete(expand('%')) \| bdelete!<CR>:q<CR>
+
 "This will look in the current directory for "tags", and work up the tree
 "towards root until one is found. IOW, you can be anywhere in your source tree
 "instead of just the root of it.
@@ -348,6 +351,9 @@ nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Leader-Shift-Tab(,-Shift-Tab) goes the other way.
 noremap <leader><Tab> :tabnext<CR>
 noremap <leader><S-Tab> :tabprev<CR>
+
+" Map Leader-mn (,mn) to open a new tab
+noremap <leader>mn :tabnew<CR>
 
 " switch between tabs with ,1, ,2,..."
 map <leader>1 1gt
