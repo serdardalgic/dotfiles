@@ -59,14 +59,14 @@ COMPLETION_WAITING_DOTS="true"
 #
 plugins=(git git-extras gitfast colored-man colorize extract autojump command-not-found debian encode64 history lol pip vagrant themes urltools zsh-syntax-highlighting autoenv python nyan redis-cli web-search celery rand-quote jira gitignore tmux git-prompt pep8 pylint iwhois)
 
+# Needed for virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/serdar/.rvm/bin
-
-# Needed for virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
 
 # Uncomment these, 'cause we are doing source activate.sh in lib/directories.sh
 # source activate.sh for autoenv
