@@ -12,6 +12,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="re5et"
 #ZSH_THEME="random"
 #ZSH_THEME="aussiegeek"
+#ZSH_THEME="smt"
 #ZSH_THEME="bira" # good for using rvm
 
 # Example aliases
@@ -51,12 +52,12 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #
-# CHECKOUT history-substring-search, virtualenvwrapper, fasd, jira plugins
+# CHECKOUT history-substring-search, virtualenvwrapper, fasd, systemadmin plugins
 # No-need-to-use:
 #
 # django : Instead, install django-extensions.
 #
-plugins=(git git-extras gitfast colored-man colorize extract autojump command-not-found debian encode64 history lol pip vagrant themes urltools zsh-syntax-highlighting autoenv python nyan redis-cli web-search celery rand-quote jira gitignore tmux)
+plugins=(git git-extras gitfast colored-man colorize extract autojump command-not-found debian encode64 history lol pip vagrant themes urltools zsh-syntax-highlighting autoenv python nyan redis-cli web-search celery rand-quote jira gitignore tmux git-prompt pep8 pylint iwhois)
 
 source $ZSH/oh-my-zsh.sh
 
