@@ -17,8 +17,8 @@ setw -g xterm-keys on
 
 # I prefer using xterm instead of screen-256color
 # In order to get solarized vim theme work with tmux configurations
-#set -g default-terminal "screen-256color"
-set -g default-terminal "xterm"
+set -g default-terminal "screen-256color"
+#set -g default-terminal "xterm"
 
 setw -g automatic-rename off
 
