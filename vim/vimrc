@@ -210,10 +210,11 @@ map <MouseMiddle> <Esc>"*p
 let g:AutoClosePairs_add = "\" '"  "add quotes to autoclose plugin
 
 " Tagbar Plugin
-if os == 'Linux'
-	nmap <leader>t :TagbarToggle<CR>
-	let g:tagbar_autofocus = 1
-endif
+" FIXME: Now, I'm using MacOSX (=
+"if os == 'Linux'
+nmap <leader>t :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+"endif
 " Only open Tagbar when used with python files. See python specific part for
 " this.
 "autocmd VimEnter * nested :TagbarToggle
@@ -306,6 +307,13 @@ let g:pymode_lint_checker = "pyflakes,pep8,mccabe"      " DEFAULT is \"pyflakes,
 " Select errors and warnings
 " E.g. "E4,W"
 "let g:pymode_lint_select = ""
+" ORDERBIRD Ignored PEP8 errors
+" E226 (whitespace around arithmetic operator)
+" E241 (multiple spaces after ',')
+" E242 (tab after ',')
+" E501 (line too long (82 > 79 characters))
+" E265 (block comment should start with '#')
+let g:pymode_lint_ignore = "E226,E241,E242,E501,E265"
 
 " Pylint configuration file
 " If file not found use 'pylintrc' from python-mode plugin directory
