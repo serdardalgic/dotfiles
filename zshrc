@@ -74,3 +74,13 @@ export PATH=/usr/local/bin:/usr/local/sbin:~/bin:/usr/lib/lightdm/lightdm:/usr/l
 
 # UA_PARSER_YAML environment variable is used by ua_parser.
 export UA_PARSER_YAML=$HOME/ua_parser_regexes.yaml
+
+# ORDERBIRD SETTINGS
+# in order to reach Postgres.app binaries
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin:~/.bin:
+
+# Should I export this? Or keep on using /usr/local/bin/python?
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export MY_OB_DEV_SETTINGS='myorderbird.conf.development'
+export MY_OB_PROJECT_ROOT='/Users/serdardalgic/Development/orderbird/my.orderbird/django_project'
+export MY_OB_VENV_NAME='orderbird'
