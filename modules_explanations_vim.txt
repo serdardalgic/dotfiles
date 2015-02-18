@@ -77,9 +77,7 @@ area and Gist it.
 
     The change in vimrc file:
     " Open gundo
-    nnoremap <leader>g :GundoToggle<CR>
-
-    So, <leader>g which is currently ,g opens the Gundo tree on the left side.
+    nnoremap <F5> :GundoToggle<CR>
 
 *****************************************************************************
 [submodule "vim/bundle/vim-multiple-cursors"]
