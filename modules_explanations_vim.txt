@@ -43,6 +43,7 @@ quicklist window by pressing "q". For more keyboard mappings, write
     * You can close the CtrlP window with Esc or <c-c>
     
     Check  "Ctrlp Plugin" Section of vimrc for details.
+    See http://kien.github.io/ctrlp.vim/ for more information on CtrlP plugin
     
 *****************************************************************************
 [submodule "vim/bundle/gist-vim"]
