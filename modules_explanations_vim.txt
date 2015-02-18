@@ -9,6 +9,8 @@
     * -i ____ ignore-case
     * --column ____ show the column number of the first match
     ** -r, -R recursive option comes with default
+
+    Also see the ackrc file for other configurations.
     
     :Ack [options] {pattern} [{directory}] 
     
