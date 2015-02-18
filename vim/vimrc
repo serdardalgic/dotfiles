@@ -187,6 +187,7 @@ nnoremap <leader>Rm :call delete(expand('%')) \| bdelete!<CR>:q<CR>
 " ack spesific fixes
 let g:ackprg="ack -H -i --column"
 noremap <Leader>a :LAck! <cword><cr>
+noremap <Leader>ao :LAck! <cword> $MY_OB_PROJECT_ROOT<cr>
 
 " Fast saving
 nmap <leader>w :w!<cr>
