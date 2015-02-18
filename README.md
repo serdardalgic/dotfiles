@@ -14,6 +14,7 @@ My dotfiles include:
     * tmuxconf
     * zshrc
     * vimrc and vim configurations under vim folder
+    * ackrc for Ack searching tool
 
 All vim plugins are added as a git submodule.
 
@@ -24,6 +25,8 @@ oh-my-zsh installation frequently updated.
 
 I've taken some noted to modules_explanations_vim.txt file, I'll turn them into
 documentation a.s.a.p. 
+
+P.S. If you're using vim, checkout the mac_settings branch instead of master.
 
 Install:
 
