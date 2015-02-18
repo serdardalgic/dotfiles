@@ -185,7 +185,7 @@ nnoremap <leader>Rm :call delete(expand('%')) \| bdelete!<CR>:q<CR>
 "map <leader>v :vsp <CR>:exec("tag ".expand("<cword>"))<CR>zz
 
 " ack spesific fixes
-let g:ackprg="ack -H -a -i --column"
+let g:ackprg="ack -H -i --column"
 noremap <Leader>a :LAck! <cword><cr>
 
 " Fast saving
