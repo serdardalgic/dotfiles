@@ -57,7 +57,7 @@ COMPLETION_WAITING_DOTS="true"
 #
 # django : Instead, install django-extensions.
 #
-plugins=(git git-extras gitfast colored-man colorize extract autojump command-not-found debian encode64 history lol pip vagrant themes urltools zsh-syntax-highlighting autoenv python nyan redis-cli web-search celery rand-quote jira gitignore tmux git-prompt pep8 pylint iwhois fabric)
+plugins=(autoenv autojump celery colored-man colorize command-not-found debian encode64 extract fabric git git-extras git-prompt gitfast gitignore history iwhois jira lol nyan pep8 pip pylint python rand-quote redis-cli themes tmux urltools vagrant web-search zsh-syntax-highlighting)
 
 # Needed for virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
