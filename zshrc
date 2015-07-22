@@ -78,7 +78,7 @@ alias vim="DYLD_FORCE_FLAT_NAMESPACE=1 vim"
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin:~/.bin:
 
 # Add Mongodb binary directory to the PATH env var.
-export PATH=~/mongodb/mongodb-linux-i686-3.0.3/bin/:$PATH
+export PATH=~/mongodb/mongodb-linux-i686-3.0.3/bin:$PATH
 
 export MY_OB_DEV_SETTINGS='myorderbird.conf.developers.serdar.settings'
 export MY_OB_PROJECT_ROOT='/Users/serdardalgic/Development/orderbird/my.orderbird/django_project'
