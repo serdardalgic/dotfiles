@@ -68,19 +68,24 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/serdar/.rvm/bin:/home/serdar/Development/LIBS/sbt/bin
 
-# Uncomment these, 'cause we are doing source activate.sh in lib/directories.sh
-# source activate.sh for autoenv
-# source ~/.autoenv/activate.sh
+export LC_CTYPE="en_US.UTF-8"
 
-# UA_PARSER_YAML environment variable is used by ua_parser.
-export UA_PARSER_YAML=$HOME/ua_parser_regexes.yaml
+# For YouCompleteMe Plugin, https://github.com/Valloric/YouCompleteMe/issues/8#issuecomment-13852745
+alias vim="DYLD_FORCE_FLAT_NAMESPACE=1 vim"
 
-# ORDERBIRD SETTINGS
+#### ORDERBIRD RELATED SETTINGS
 # in order to reach Postgres.app binaries
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin:~/.bin:
 
-# Should I export this? Or keep on using /usr/local/bin/python?
-#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export MY_OB_DEV_SETTINGS='myorderbird.conf.development'
+# Add Mongodb binary directory to the PATH env var.
+export PATH=~/mongodb/mongodb-linux-i686-3.0.3/bin/:$PATH
+
+export MY_OB_DEV_SETTINGS='myorderbird.conf.developers.serdar.settings'
 export MY_OB_PROJECT_ROOT='/Users/serdardalgic/Development/orderbird/my.orderbird/django_project'
 export MY_OB_VENV_NAME='orderbird'
+
+alias setup_env='`sudo cat /Users/serdardalgic/.secret`'
+
+# Needed for GDPDU exports
+export PYTHONPATH=$PYTHONPATH:/Users/serdardalgic/Development/orderbird/my.orderbird/django_project
+#### ORDERBIRD RELATED SETTINGS
