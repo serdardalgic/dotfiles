@@ -37,8 +37,12 @@
     untracked = cyan
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	editor = vim
+	editor = DYLD_FORCE_FLAT_NAMESPACE=1 vim
 #[credential]
 #	helper = osxkeychain
 [github]
-	user = serdardalgic
+    user = serdardalgic
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
