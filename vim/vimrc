@@ -36,7 +36,9 @@ set showmode                    " Show current mode.
 set encoding=utf-8              " Set default encoding to UTF-8
 set autowrite                   " Automatically save before :next, :make etc.
 set cmdheight=1                 " The commandbar height
-set laststatus=2
+set laststatus=2                " Always display the statusline in all windows"
+set showtabline=2               " Always display the tabline, even if there is only one tab
+set noshowmode                  " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 set splitright                  " Split vertical windows right to the current windows
 set splitbelow                  " Split horizontal windows below to the current windows
@@ -74,17 +76,17 @@ au BufWinEnter * silent! loadview
 
 " -[ FileTypes ]-
 " mail
-autocmd FileType mail,human set formatoptions+=t textwidth=80
+autocmd FileType mail,human set formatoptions+=t textwidth=120
 
 " markdown
-autocmd FileType markdown set textwidth=80
+autocmd FileType markdown set textwidth=120
 autocmd FileType markdown set nocindent "Wraping fix for braces
 autocmd FileType markdown set expandtab "Use spaces for tabs, a requirement by markdown
 autocmd FileType markdown set shiftwidth=4
 
 " Python stuff
-" Wrap the lines to 80 characters
-set tw=80
+" Wrap the lines to 120 characters
+set tw=120
 autocmd FileType python let python_highlight_all = 1
 autocmd FileType python let python_slow_sync = 1
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -127,14 +129,10 @@ let g:solarized_termcolors=256
 let g:solarized_visibility="high"
 "colorscheme solarized "enable iterm2-solarized preset if you want to use it
 
-" Powerline
-let g:Powerline_symbols = 'unicode'
-
 " No toolbars, menu or scrollbars in the GUI
 if has('gui')
     if os == 'Darwin' || os == 'Mac'
         set guifont=Source\ Code\ Pro:h13
-        colorscheme solarized
     endif
 	set vb t_vb=
 	set guioptions-=m  "no menu
@@ -353,6 +351,9 @@ let g:pymode_indent = 1                  " Enable pymode indentation
 let g:pymode_virtualenv = 1              " Auto fix vim python paths if virtualenv enabled
 let g:pymode_folding = 0                 " Do not automatically fold
 
+set foldmethod=indent
+set foldlevel=99
+
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
@@ -384,3 +385,9 @@ imap <leader>6 <esc>6gt
 imap <leader>7 <esc>7gt
 imap <leader>8 <esc>8gt
 imap <leader>9 <esc>9gt
+
+" Searches directly the visually selected text.
+vnoremap // y/<C-R>"<CR>"
+" Somehow the syntax enable is broken (especially for python files).
+" With this command, I can call syntax enable after loading everything in Vim.
+autocmd VimEnter * syntax enable
