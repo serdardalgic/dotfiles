@@ -89,3 +89,6 @@ alias setup_env='`sudo cat /Users/serdardalgic/.secret`'
 # Needed for GDPDU exports
 export PYTHONPATH=$PYTHONPATH:/Users/serdardalgic/Development/orderbird/my.orderbird/django_project
 #### ORDERBIRD RELATED SETTINGS
+#
+# BIKESURF RELATED:
+export BIKESURF_VIRTENV_PATH=$HOME/.virtualenvs/bikesurf
