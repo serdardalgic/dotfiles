@@ -4,10 +4,11 @@ all:
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vim/vimrc ~/.vimrc
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
+	[ -f ~/.gitignore ] || ln -s $(PWD)/gitignore ~/.gitignore
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmuxconf ~/.tmux.conf
 	[ -f ~/.ackrc ] || ln -s $(PWD)/ackrc ~/.ackrc
 
 clean:
-	rm -f ~/.vimrc ~/.zshrc ~/.vim ~/.zsh ~/.gitconfig ~/.tmux.conf ~/.ackrc
+	rm -f ~/.vimrc ~/.zshrc ~/.vim ~/.zsh ~/.gitconfig ~/.gitignore ~/.tmux.conf ~/.ackrc
 
 .PHONY: all
