@@ -59,10 +59,6 @@ COMPLETION_WAITING_DOTS="true"
 #
 plugins=(autoenv autojump bgnotify brew celery colored-man colorize command-not-found debian django emoji encode64 extract fabric git git-extras git-flow git-prompt gitfast gitignore history history-substring-search iwhois jira jsontools lol nyan pep8 pip pylint python rand-quote redis-cli rsync themes tmux urltools vagrant web-search zsh-syntax-highlighting zsh_reload)
 
-# Needed for virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -83,8 +79,6 @@ export PATH=~/mongodb/mongodb-linux-i686-3.0.3/bin:$PATH
 export MY_OB_DEV_SETTINGS='myorderbird.conf.developers.serdar.settings'
 export MY_OB_PROJECT_ROOT='/Users/serdardalgic/Development/orderbird/my.orderbird/django_project'
 export MY_OB_VENV_NAME='orderbird'
-
-alias setup_env='`sudo cat /Users/serdardalgic/.secret`'
 
 # Needed for GDPDU exports
 export PYTHONPATH=$PYTHONPATH:/Users/serdardalgic/Development/orderbird/my.orderbird/django_project
