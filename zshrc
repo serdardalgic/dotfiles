@@ -86,3 +86,5 @@ export PYTHONPATH=$PYTHONPATH:/Users/serdardalgic/Development/orderbird/my.order
 #
 # BIKESURF RELATED:
 export BIKESURF_VIRTENV_PATH=$HOME/.virtualenvs/bikesurf
+
+source ~/.homebrew_token
