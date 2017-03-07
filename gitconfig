@@ -1,6 +1,7 @@
 [user]
 	name = Serdar Dalgıç
 	email = sd@serdardalgic.org
+	signingkey = 9121E93D
 [alias]
     st = status
     ci = commit
@@ -17,6 +18,9 @@
     sha = "!sh -c 'git rev-parse --short \"$1\"' -"
 # Show files ignored by git:
     ign = ls-files -o -i --exclude-standard
+
+[commit]
+    gpgsign = true
 
 [color]
     ui = auto
@@ -37,7 +41,7 @@
     untracked = cyan
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	editor = DYLD_FORCE_FLAT_NAMESPACE=1 vim
+    editor = DYLD_FORCE_FLAT_NAMESPACE=1 vim
 #[credential]
 #	helper = osxkeychain
 [github]
@@ -50,3 +54,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[credential]
+	helper = osxkeychain
