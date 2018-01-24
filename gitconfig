@@ -1,7 +1,7 @@
 [user]
 	name = Serdar Dalgıç
 	email = sd@serdardalgic.org
-	signingkey = 9121E93D
+	signingkey = D0DDFE9B
 [alias]
     st = status
     ci = commit
