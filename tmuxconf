@@ -43,6 +43,9 @@ bind l select-pane -R
 set-option -g status-keys vi
 set-window-option -g mode-keys vi
 
+# TODO:
+# Check https://github.com/tmux/tmux/issues/754 and update the bind-keys accordingly
+# They will not work at tmux 2.4
 # v and y like vi in copy-mode
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-selection
