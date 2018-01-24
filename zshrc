@@ -57,34 +57,70 @@ COMPLETION_WAITING_DOTS="true"
 #
 # django : Instead, install django-extensions.
 #
-plugins=(autoenv autojump bgnotify brew celery colored-man colorize command-not-found debian django emoji encode64 extract fabric git git-extras git-flow git-prompt gitfast gitignore history history-substring-search iwhois jira jsontools lol nyan pep8 pip pylint python rand-quote redis-cli rsync themes tmux urltools vagrant web-search zsh-syntax-highlighting zsh_reload)
+# TODO: Check and update the plugins.
+plugins=(autojump bgnotify brew celery colored-man colorize command-not-found debian django emoji encode64 extract fabric git git-extras git-flow git-prompt gitfast gitignore history history-substring-search iwhois jira jsontools lol nyan pep8 pip pylint python rand-quote redis-cli rsync themes tmux urltools vagrant web-search zsh-syntax-highlighting zsh_reload)
+
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/serdar/.rvm/bin:/home/serdar/Development/LIBS/sbt/bin
 
-export LC_CTYPE="en_US.UTF-8"
+# TODO: Check the following line, if we don't need it, remove it.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# For YouCompleteMe Plugin, https://github.com/Valloric/YouCompleteMe/issues/8#issuecomment-13852745
-alias vim="DYLD_FORCE_FLAT_NAMESPACE=1 vim"
+update_git_repo() {
+    local repo=$1
+    echo
+    echo "UPDATING $repo"
+    echo
+    cd $repo
+    git fetch --prune
+    git stash
+    git co master
+    git pull origin master
+    if [[ `git branch --list develop ` ]]; then
+        git co develop
+        git pull origin develop
+        git co @{-2}
+    else
+        git co @{-1}
+    fi
+    git stash pop
+    cd ..
+}
 
-#### ORDERBIRD RELATED SETTINGS
-# in order to reach Postgres.app binaries
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin:~/.bin:
+# TODO: Make the ob functions more generic.
+# FUNCTION TO UPDATE OB REPOS
+update_ob() {
+    cd ~/Development/ORDERBIRD
+    for repo in `cat .update`; do
+        update_git_repo $repo
+    done
+}
 
-# Add Mongodb binary directory to the PATH env var.
-export PATH=~/mongodb/mongodb-linux-i686-3.0.3/bin:$PATH
+# FUNCTION THAT SHOWS THE RELATION BETWEEN MASTER AND DEVELOP IN OB REPOS
+relation_ob() {
+    cd ~/Development/ORDERBIRD
+    for repo in `cat .update`; do
+        cd $repo
+        if [[ `git branch --list develop ` ]]; then
+            echo
+            echo "RELATION FOR $repo"
+            echo
+            git relation master develop
+        fi
+        cd ..
+    done
+}
 
-export MY_OB_DEV_SETTINGS='myorderbird.conf.developers.serdar.settings'
-export MY_OB_PROJECT_ROOT='/Users/serdardalgic/Development/orderbird/my.orderbird/django_project'
-export MY_OB_VENV_NAME='orderbird'
+add_serdars_ssh_keys() {
+    for privat_key in ~/.ssh/privat/*; do
+        ssh-add $privat_key
+    done
+}
 
-# Needed for GDPDU exports
-export PYTHONPATH=$PYTHONPATH:/Users/serdardalgic/Development/orderbird/my.orderbird/django_project
-#### ORDERBIRD RELATED SETTINGS
-#
-# BIKESURF RELATED:
-export BIKESURF_VIRTENV_PATH=$HOME/.virtualenvs/bikesurf
+add_serdars_ssh_keys
 
-source ~/.homebrew_token
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
