@@ -52,12 +52,8 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #
-# CHECKOUT history-substring-search, virtualenvwrapper, fasd, systemadmin plugins
-# No-need-to-use:
 #
-# django : Instead, install django-extensions.
 #
-# TODO: Check and update the plugins.
 plugins=(autojump
 	bgnotify
 	brew
@@ -65,25 +61,27 @@ plugins=(autojump
 	colored-man-pages
 	colorize
 	command-not-found
+	copybuffer
 	cp
 	debian # Some nice aliases here, check it: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#debian
-	django
+	docker
+	dotenv
 	emoji
 	encode64
 	extract
 	fabric
 	git
-	git-extras
-	git-flow
+	git-extras # You need to install git-extras first https://github.com/tj/git-extras
 	git-prompt
-	gitfast
 	gitignore
+	golang
 	history
 	history-substring-search
-	iwhois
+	iterm2
+	iwhois # I'm not so sure to keep this plugin :S
 	jira
-	jsontools
-	lol
+	kubectl
+	man
 	nyan
 	pep8
 	pip
@@ -92,10 +90,14 @@ plugins=(autojump
 	rand-quote
 	redis-cli
 	rsync
+	sudo
+	systemadmin
+	terraform
 	themes
 	tmux
 	urltools
 	vagrant
+	vault
 	web-search
 	zsh-syntax-highlighting
 	zsh_reload)
@@ -164,3 +166,6 @@ add_serdars_ssh_keys
 
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
+
+# Prints a random quote every time
+quote
