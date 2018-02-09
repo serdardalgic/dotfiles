@@ -62,7 +62,7 @@ plugins=(autojump
 	bgnotify
 	brew
 	celery
-	colored-man
+	colored-man-pages
 	colorize
 	command-not-found
 	debian
