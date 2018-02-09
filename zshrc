@@ -58,7 +58,46 @@ COMPLETION_WAITING_DOTS="true"
 # django : Instead, install django-extensions.
 #
 # TODO: Check and update the plugins.
-plugins=(autojump bgnotify brew celery colored-man colorize command-not-found debian django emoji encode64 extract fabric git git-extras git-flow git-prompt gitfast gitignore history history-substring-search iwhois jira jsontools lol nyan pep8 pip pylint python rand-quote redis-cli rsync themes tmux urltools vagrant web-search zsh-syntax-highlighting zsh_reload)
+plugins=(autojump
+	bgnotify
+	brew
+	celery
+	colored-man
+	colorize
+	command-not-found
+	debian
+	django
+	emoji
+	encode64
+	extract
+	fabric
+	git
+	git-extras
+	git-flow
+	git-prompt
+	gitfast
+	gitignore
+	history
+	history-substring-search
+	iwhois
+	jira
+	jsontools
+	lol
+	nyan
+	pep8
+	pip
+	pylint
+	python
+	rand-quote
+	redis-cli
+	rsync
+	themes
+	tmux
+	urltools
+	vagrant
+	web-search
+	zsh-syntax-highlighting
+	zsh_reload)
 
 
 source $ZSH/oh-my-zsh.sh
