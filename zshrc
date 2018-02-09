@@ -65,6 +65,7 @@ plugins=(autojump
 	colored-man-pages
 	colorize
 	command-not-found
+	cp
 	debian
 	django
 	emoji
