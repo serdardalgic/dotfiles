@@ -66,7 +66,7 @@ plugins=(autojump
 	colorize
 	command-not-found
 	cp
-	debian
+	debian # Some nice aliases here, check it: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#debian
 	django
 	emoji
 	encode64
