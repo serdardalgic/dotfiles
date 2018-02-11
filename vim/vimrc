@@ -1,53 +1,72 @@
-" .vimrc
-set nocompatible                "Turn off compability mode with Vi, we don't need that anymore
+" vim-plug plugins
+" https://github.com/junegunn/vim-plug
 
-" Pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" Add vim-plug as a plugin for Vim help
+call plug#begin('~/.vim/plugged')
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'junegunn/vim-plug' 
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'SirVer/ultisnips'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+call plug#end()
 
+
+""""""""""""""""""""""
+"      Settings      "
+" ------------------ "
+set nocompatible                "Turn off compability mode with Vi, we don't need tht anymore
 " Enable filetype stuff
 filetype on
 filetype plugin on
 filetype plugin indent on
 
-set cindent
-set autoindent                  " Copy indent from current line when starting a new line.
-set backspace=indent,eol,start  " makes backspace key more powerful.
-
 set showmatch                   " do not show matching brackets by flickering
+set mat=3                       " show matching brackets for 0.3 seconds
 set incsearch                   " shows the match while typing
 set hlsearch                    " highlight found searches
-set smartcase                   " Turn of smart searching
-set ignorecase                  " Search incase sensitive
+set ignorecase                  " Search case insensitive...
+set smartcase                   " ... but not it begins with upper case
 
-set ruler                       " show line and column number
-set wildmenu					" command line tab completion, more superior
-set wildmode=list:full			" type :h wildmode for more info about list options
-set history=1000                " Number of lines of command line history.
-
+set wildmenu			" command line tab completion, more superior
+set wildmode=list:full		" type :h wildmode for more info about list options
+set completeopt=menu,menuone    " Show popup menu, even if there is one entry
+set pumheight=10                " Completion window max size
+set history=10000               " Number of lines of command line history. (Upper Bound is 10000 chars)
 set noerrorbells                " No beeps
 set gdefault                    " Use 'g' flag by default with :s/foo/bar/.
 set number                      " Show line numbers
 
-set ttyscroll=0                 " Turn off scrolling (this is faster).
 set ttyfast                     " We have a fast terminal connection.
+set ttymouse=xterm2             " Indicate terminal type for mouse codes
+set ttyscroll=3                 " Speedup scrolling
+set laststatus=2                " Show status line always
 set showcmd                     " Show me what I'm typing
+" TODO: Check airline and/or lightline and set noshowmode
 set showmode                    " Show current mode.
 set encoding=utf-8              " Set default encoding to UTF-8
 set autowrite                   " Automatically save before :next, :make etc.
-set cmdheight=1                 " The commandbar height
-set laststatus=2                " Always display the statusline in all windows"
-set showtabline=2               " Always display the tabline, even if there is only one tab
-set noshowmode                  " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set hidden                      " Buffer should still exist if window is closed
+set autoread                    " Automatically read changed files
+set autoindent                  " Enable Autoindent
+set backspace=indent,eol,start  " Makes backspace key more powerful.
+set scrolloff=3			" Start scrolling three lines before the horizontal window border
+
 
 set splitright                  " Split vertical windows right to the current windows
 set splitbelow                  " Split horizontal windows below to the current windows
 set noswapfile                  " Don't use swapfile
 set clipboard+=unnamed
 
-set mat=5                       " show matching brackets for 0.5 seconds
-set wrap                        " word wrap
 set lazyredraw                  " the screen will not be redrawn while executing macros, registers
+set mat=3                       " show matching brackets for 0.3 seconds
 
 " Prefer unix over windows over os9 formats
 set fileformats=unix,dos,mac
@@ -55,93 +74,34 @@ set fileformats=unix,dos,mac
 " we don't want to edit these kind of files >.<
 set wildignore=*.o,*.obj,*.bak,*.exe,*.so,*.la,*.out,*.pyc,*.swp
 
-" C/C++ stuff, tabs are four columns wide. Each indentation level is one tab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-
-" Enable undo even if the file is closed
-set undofile
-set undodir=/tmp
 set nobackup            " Dont create annoying backup files
 
-"make vim save and load the folding of the document each time it loads"
-""also places the cursor in the last place that it was left."
+" This enables us to undo files even if you exit Vim.
+if has('persistent_undo')
+  set undofile
+  set undodir=~/.config/vim/tmp/undo//
+endif
+
+" Make vim save and load the folding of the document each time it loads"
+" also places the cursor in the last place that it was left."
 set viewdir=/tmp
 
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
+" Per default, netrw leaves unmodified buffers open. This autocommand
+" deletes netrw's buffer once it's hidden (using ':q', for example)
+" https://vi.stackexchange.com/a/13012
+autocmd FileType netrw setl bufhidden=delete
 
-
-" -[ FileTypes ]-
+""""""""""""""""""""""
+"  -[ FileTypes ]-   "
+" ------------------ "
 " mail
-autocmd FileType mail,human set formatoptions+=t textwidth=120
+autocmd FileType mail,human set formatoptions+=t textwidth=80
 
 " markdown
-autocmd FileType markdown set textwidth=120
+autocmd FileType markdown set textwidth=80
 autocmd FileType markdown set nocindent "Wraping fix for braces
 autocmd FileType markdown set expandtab "Use spaces for tabs, a requirement by markdown
 autocmd FileType markdown set shiftwidth=4
-
-" Python stuff
-" Wrap the lines to 120 characters
-set tw=120
-autocmd FileType python let python_highlight_all = 1
-autocmd FileType python let python_slow_sync = 1
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
-autocmd FileType python set completeopt=menu
-autocmd FileType python set expandtab              " Tabs are converted to spaces
-" Open Tagbar only with python files. See Tagbar part for details.
-autocmd FileType python nested :TagbarToggle
-
-autocmd BufRead,BufNewFile *.go set filetype=go
-
-" We'll use it for settings that should apply only to one OS (like Linux)
-let os=substitute(system('uname'), '\n', '', '')
-
-" Multibyte reading of utf-16
-if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
-  "setglobal bomb
-  set fileencodings=ucs-bom,utf-8,latin1
-endif
-
-""""""""""""""""""""
-" Color and Syntax "
-" ---------------- "
-syntax enable                   " syntax formatting for languages
-" Map <F7> for syntax on/off switching
-:map <F7> :if exists("g:syntax_on") <Bar>
-    \   syntax off <Bar>
-    \ else <Bar>
-    \   syntax enable <Bar>
-    \ endif <CR>
-set background=dark
-set t_Co=256                    " set to 256 color mode if the console supports it
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_visibility="high"
-"colorscheme solarized "enable iterm2-solarized preset if you want to use it
-
-" No toolbars, menu or scrollbars in the GUI
-if has('gui')
-    if os == 'Darwin' || os == 'Mac'
-        set guifont=Source\ Code\ Pro:h13
-    endif
-	set vb t_vb=
-	set guioptions-=m  "no menu
-	set guioptions-=T  "no toolbar
-	set guioptions-=l
-	set guioptions-=L
-	set guioptions-=r  "no scrollbar
-	set guioptions-=R
-end
 
 """""""""""""""""""""""""""""""""""""""""""""
 " Mappings, key bindings for plugins, etc.. "
@@ -153,7 +113,6 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-
 " Better split switching
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -161,40 +120,25 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " This comes first, because we have mappings that depend on leader
+" By default it's the backslash('/').
 " With a map leader it's possible to do extra key combinations
 " i.e: <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
 
-set makeprg=make
-set showfulltag
+" Jump to next error with Ctrl-n and previous error with Ctrl-m. Close the
+" quickfix window with <leader>a
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
 
 " Shortcut for removing a file in vim
 nnoremap <leader>Rm :call delete(expand('%')) \| bdelete!<CR>:q<CR>
-
-"This will look in the current directory for "tags", and work up the tree
-"towards root until one is found. IOW, you can be anywhere in your source tree
-"instead of just the root of it.
-"set tags=./tags;/
-"map <leader>s <C-W><C-I><CR>
-"" Open the definition in a new tab
-"map <leader>t :tab split<CR>:exec("tag ".expand("<cword>"))<CR>zz
-"" Open the definition in a vertical split
-"map <leader>v :vsp <CR>:exec("tag ".expand("<cword>"))<CR>zz
-
-" ack spesific fixes
-let g:ackprg="ack -H -i --column"
-noremap <Leader>a :LAck! <cword><cr>
-noremap <Leader>ao :LAck! <cword> $MY_OB_PROJECT_ROOT<cr>
 
 " Fast saving
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
 nmap <leader>wq :wq!<cr>
-
-" Save fold settings, open/close folds easily with spacebar
-" TODO: Doesn't work
-"nnoremap <space> zz
 
 " Move up and down on splitted lines (on small width screens)
 map <Up> gk
@@ -202,48 +146,16 @@ map <Down> gj
 map k gk
 map j gj
 
+" Act like D and C (yank, delete, copy, same behaviour)
+nnoremap Y y$
+
 " Make mouse middle click paste without formatting it
 map <MouseMiddle> <Esc>"*p
 
-" Autoclose Plugin
-let g:AutoClosePairs_add = "\" '"  "add quotes to autoclose plugin
-
-" Tagbar Plugin
-" FIXME: Now, I'm using MacOSX (=
-"if os == 'Linux'
-nmap <leader>t :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-"endif
-" Only open Tagbar when used with python files. See python specific part for
-" this.
-"autocmd VimEnter * nested :TagbarToggle
-"TODO: <F8> tagbar and TagbarToggle tagbar are not the same, take a look at it
-
-" Open gundo
-nnoremap <F5> :GundoToggle<CR>
-
-" Nerdtree plugin
-nmap <leader>n :NERDTreeToggle <CR>
-let NERDTreeChDirMode=1
-
-if os == 'Darwin' || os == 'Mac'
-	let g:NERDTreeDirArrows=0 " Fix a bug on mac
-endif
-
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$'] "
-
-" open a NERDTree automatically when vim starts up if no files were specified
-" TODO: this f*cks up when I use diff -u hede hodo | vi -
-"   we should find a solution for this ;)
-autocmd vimenter * if !argc() | NERDTree | endif
-
-" Just go out in insert mode
-imap jj <ESC>
-
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
-map N Nzz
-map n nzz
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 " Open help window always vertically
 nmap zH :vert he
@@ -256,106 +168,6 @@ set autochdir
 
 " save it with sudo again
 nnoremap <leader>ss :w !sudo tee %<CR>
-
-" trim all whitespaces away
-" TODO:We may remove the following part, as it is accomplished with python-mode
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-
-" Start scrolling three lines before the horizontal window border
-set scrolloff=3
-
-" Keep cursor in place when we join files
-nnoremap J mzJ`z
-
-" Act like D and C
-nnoremap Y y$
-
-" Ctrlp Plugin
-"
-let g:ctrlp_cmd = 'CtrlPMixed'			" search anything (in files, buffers and MRU files at the same time.)
-let g:ctrlp_working_path_mode = 'ra'	" search for nearest ancestor like .git, .hg, and the directory of the current file
-let g:ctrlp_match_window_bottom = 1		" show the match window at the top of the screen:
-let g:ctrlp_max_height = 10				" maxiumum height of match window
-let g:ctrlp_switch_buffer = 'Et'		" jump to a file if its open already
-let g:ctrlp_use_caching = 1				" enable caching
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' "cache dir
-let g:ctrlp_show_hidden = 1				" show me dotfiles
-let g:ctrlp_mruf_max = 250				" number of recently opened files
-
-" -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- "
-
-""" python-mode plugin settings
-"""
-let g:pymode_lint_write = 1             " Enable pylint checking every save. DEFAULT 1
-
-" Show documentation
-let g:pymode_doc = 1                    " Load show documentation plugin. DEFAULT 1
-let g:pymode_doc_key = 'K'              " Key for show python documentation. DEFAULT 'K'
-
-" Run python code
-let g:pymode_run = 1                    " Load run code plugin. DEFAULT 1
-let g:pymode_run_key = '<leader>r'      " Key for run python code. DEFAULT '<leader>r'
-
-" Code checking
-let g:pymode_lint = 1                   " Load pylint code plugin. DEFAULT 1
-
-" Switch pylint, pyflakes, pep8, mccabe code-checkers.
-" Can have multiply values "pep8,pyflakes,mcccabe"
-let g:pymode_lint_checker = "pyflakes,pep8,mccabe"      " DEFAULT is \"pyflakes,pep8,mccabe\"
-
-" Select errors and warnings
-" E.g. "E4,W"
-"let g:pymode_lint_select = ""
-" ORDERBIRD Ignored PEP8 errors
-" E226 (whitespace around arithmetic operator)
-" E241 (multiple spaces after ',')
-" E242 (tab after ',')
-" E501 (line too long (82 > 79 characters))
-" E265 (block comment should start with '#')
-let g:pymode_lint_ignore = "E226,E241,E242,E501,E265"
-
-" Pylint configuration file
-" If file not found use 'pylintrc' from python-mode plugin directory
-let g:pymode_lint_config = "$HOME/.pylintrc"            " DEFAULT is \"$HOME/.pylintrc\"
-
-let g:pymode_lint_message = 1            " Show error message if cursor placed at the error line. DEFAULT 1
-let g:pymode_lint_jump = 0               " Auto jump on first error. DEFAULT 0
-let g:pymode_lint_hold = 0               " Hold cursor in current window when quickfix is open. DEFAULT 0
-let g:pymode_lint_signs = 1              " Place error signs. DEFAULT 1
-let g:pymode_lint_mccabe_complexity = 8  " Maximum allowed mccabe complexity. DEFAULT 8
-
-let g:pymode_lint_minheight = 3          " Minimal height of pylint error window. DEFAULT 3
-let g:pymode_lint_maxheight = 6          " Maximal height of pylint error window. DEFAULT 6
-
-""" ROPE PLUGIN in python-mode
-let g:pymode_rope = 1                    " Load rope plugin. DEFAULT 1
-let g:pymode_rope_auto_project = 1       " Auto create and open ropeproject. DEFAULT
-let g:pymode_rope_enable_autoimport = 1  " Enable autoimport
-let g:pymode_rope_autoimport_generate = 1 " Auto generate global cache
-let g:pymode_rope_autoimport_underlineds = 0
-let g:pymode_rope_codeassist_maxfixes = 10
-let g:pymode_rope_sorted_completions = 1
-let g:pymode_rope_extended_complete = 1
-let g:pymode_rope_autoimport_modules = ["os","shutil","datetime"]
-let g:pymode_rope_confirm_saving = 1
-let g:pymode_rope_global_prefix = "<C-x>p"
-let g:pymode_rope_local_prefix = "<C-c>r"
-let g:pymode_rope_vim_completion = 1
-let g:pymode_rope_guess_project = 1
-let g:pymode_rope_goto_def_newwin = ""
-let g:pymode_rope_always_show_complete_menu = 0
-
-let g:pymode_utils_whitespaces = 1       " Autoremove unused whitespaces
-let g:pymode_indent = 1                  " Enable pymode indentation
-
-let g:pymode_virtualenv = 1              " Auto fix vim python paths if virtualenv enabled
-let g:pymode_folding = 0                 " Do not automatically fold
-
-set foldmethod=indent
-set foldlevel=99
-
-let g:ycm_autoclose_preview_window_after_completion=1
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " This mapping makes Leader-Tab (,Tab) switch between tabs.
 " Leader-Shift-Tab(,-Shift-Tab) goes the other way.
@@ -386,8 +198,100 @@ imap <leader>7 <esc>7gt
 imap <leader>8 <esc>8gt
 imap <leader>9 <esc>9gt
 
-" Searches directly the visually selected text.
-vnoremap // y/<C-R>"<CR>"
-" Somehow the syntax enable is broken (especially for python files).
-" With this command, I can call syntax enable after loading everything in Vim.
-autocmd VimEnter * syntax enable
+
+"""""""""""""""""""""
+"      Plugins      "
+"""""""""""""""""""""
+
+" ack spesific fixes
+let g:ackprg="ack -H -a -i --column"
+noremap <Leader>a :LAck! <cword><cr>
+
+" Nerdtree plugin
+nmap <leader>n :NERDTreeToggle <CR>
+let NERDTreeChDirMode=1
+
+"if g:os == 'Darwin' || g:os == 'Mac'
+if has('osx')
+    let g:NERDTreeDirArrows=0 " Fix a bug on mac
+endif
+
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
+
+" vim-go
+let g:go_fmt_command = "goimports"
+let g:go_autodetect_gopath = 1
+let g:go_list_type = "quickfix"
+
+let g:go_auto_type_info = 1
+" It can easily get annoying
+" let g:sameids = 1
+
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_generate_tags = 1
+
+" Open :GoDeclsDir with ctrl-g
+nmap <C-g> :GoDeclsDir<cr>
+imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
+
+
+augroup go
+  autocmd!
+
+  " Show by default 4 spaces for a tab
+  autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+
+  " :GoBuild and :GoTestCompile
+  autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+
+  " :GoTest
+  autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+  " :GoTestFunc
+  autocmd FileType go nmap <leader>tf  <Plug>(go-test-func)
+
+  " :GoRun
+  autocmd FileType go nmap <leader>r  <Plug>(go-run)
+
+  " :GoDoc
+  autocmd FileType go nmap <Leader>d <Plug>(go-doc)
+
+  " :GoCoverageToggle
+  autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+
+  " :GoInfo
+  autocmd FileType go nmap <Leader>i <Plug>(go-info)
+
+  " :GoMetaLinter
+  autocmd FileType go nmap <Leader>l <Plug>(go-metalinter)
+
+  " :GoDef but opens in a vertical split
+  autocmd FileType go nmap <Leader>v <Plug>(go-def-vertical)
+  " :GoDef but opens in a horizontal split
+  autocmd FileType go nmap <Leader>s <Plug>(go-def-split)
+  " :GoRename
+  autocmd FileType go nmap <Leader>ren <Plug>(go-rename)
+
+
+  " :GoAlternate  commands :A, :AV, :AS and :AT
+  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+augroup END
+
+" build_go_files is a custom function that builds or compiles the test file.
+" It calls :GoBuild if its a Go file, or :GoTestCompile if it's a test file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
