@@ -224,7 +224,8 @@ let g:go_autodetect_gopath = 1
 let g:go_list_type = "quickfix"
 
 let g:go_auto_type_info = 1
-let g:go_auto_sameids = 1
+" It can easily get annoying
+" let g:sameids = 1
 
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
@@ -250,6 +251,9 @@ augroup go
 
   " :GoTest
   autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+  " :GoTestFunc
+  autocmd FileType go nmap <leader>tf  <Plug>(go-test-func)
 
   " :GoRun
   autocmd FileType go nmap <leader>r  <Plug>(go-run)
