@@ -82,6 +82,7 @@ plugins=(autojump
 	jira
 	kubectl
 	man
+	minikube # custom plugin
 	nyan
 	pep8
 	pip
