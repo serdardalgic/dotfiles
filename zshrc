@@ -165,8 +165,9 @@ add_serdars_ssh_keys() {
 
 add_serdars_ssh_keys
 
-export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
+export DOCKER_ID_USER="serdard"
 # Prints a random quote every time
 quote
