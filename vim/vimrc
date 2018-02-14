@@ -16,6 +16,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
 
 
@@ -204,10 +205,12 @@ imap <leader>9 <esc>9gt
 """""""""""""""""""""
 
 " ack spesific fixes
+"""""""""""""""""""""
 let g:ackprg="ack -H -a -i --column"
 noremap <Leader>a :LAck! <cword><cr>
 
 " Nerdtree plugin
+"""""""""""""""""""""
 nmap <leader>n :NERDTreeToggle <CR>
 let NERDTreeChDirMode=1
 
@@ -219,6 +222,7 @@ endif
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 
 " vim-go
+"""""""""""""""""""""
 let g:go_fmt_command = "goimports"
 let g:go_autodetect_gopath = 1
 let g:go_list_type = "quickfix"
@@ -295,3 +299,7 @@ function! s:build_go_files()
     call go#cmd#Build(0)
   endif
 endfunction
+
+" vim markdown plugin
+"""""""""""""""""""""
+let vim_markdown_preview_github=1
