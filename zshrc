@@ -158,9 +158,12 @@ relation_ob() {
 }
 
 add_serdars_ssh_keys() {
-    for privat_key in ~/.ssh/privat/*; do
-        ssh-add $privat_key
-    done
+    DIR=~/.ssh/privat
+    if [ "$(ls -A $DIR)" ]; then
+        for privat_key in $DIR/*; do
+            ssh-add $privat_key
+        done
+    fi
 }
 
 add_serdars_ssh_keys
