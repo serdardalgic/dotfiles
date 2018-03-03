@@ -168,6 +168,19 @@ add_serdars_ssh_keys() {
 
 add_serdars_ssh_keys
 
+#
+# THRIFT ALIASES AND FUNCTIONS
+#
+# Using https://hub.docker.com/_/thrift/ for thrift
+# docker pull thrift // Call this command first
+alias thrift='docker run -v "$PWD:/data" -u $(id -u) thrift thrift -r -o /data'
+pythrift(){
+    thrift --gen py /data/$1
+}
+gothrift(){
+    thrift --gen go /data/$1
+}
+
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
