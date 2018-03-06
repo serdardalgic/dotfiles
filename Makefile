@@ -1,5 +1,4 @@
 all:
-	[ -d ~/.vim/ ] || ln -s $(PWD)/vim/ ~/.vim
 	[ -d ~/.autoenv/ ] || ln -s $(PWD)/.autoenv/ ~/.autoenv
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vim/vimrc ~/.vimrc
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
