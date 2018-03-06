@@ -65,6 +65,7 @@ plugins=(autojump
 	cp
 	debian # Some nice aliases here, check it: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#debian
 	docker
+	docker-compose
 	dotenv
 	emoji
 	encode64
@@ -82,7 +83,7 @@ plugins=(autojump
 	jira
 	kubectl
 	man
-	minikube # custom plugin
+	minikube # custom plugin ???
 	nyan
 	pep8
 	pip
@@ -100,7 +101,7 @@ plugins=(autojump
 	vagrant
 	vault
 	web-search
-	zsh-syntax-highlighting
+	zsh-syntax-highlighting # cd ~/.oh-my-zsh/custom/plugins/; git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 	zsh_reload)
 
 
