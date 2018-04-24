@@ -81,6 +81,7 @@ plugins=(autojump
 	iterm2
 	iwhois # I'm not so sure to keep this plugin :S
 	jira
+        #kube-ps1 #kube-ps1.zsh file should be renamed, comment in when it's fixed
 	kubectl
 	man
 	minikube # custom plugin ???
@@ -186,5 +187,9 @@ export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 export DOCKER_ID_USER="serdard"
-# Prints a random quote every time
-quote
+# Prints a random quote every time (It takes a long time to open a new terminal, so, abort!
+# quote
+
+# Remove the source here, once the kube-ps1 plugin is fixed.
+source /Users/serdar/.oh-my-zsh/plugins/kube-ps1/kube-ps1.zsh
+PROMPT='$(kube_ps1) '$PROMPT
