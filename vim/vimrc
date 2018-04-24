@@ -221,6 +221,13 @@ endif
 
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 
+" ultisnips
+"""""""""""""""""""""
+" Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 " vim-go
 """""""""""""""""""""
 let g:go_fmt_command = "goimports"
