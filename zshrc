@@ -170,6 +170,11 @@ add_serdars_ssh_keys() {
 
 add_serdars_ssh_keys
 
+nsalistens() {
+    # shows which ports are being listened on local machine
+    sudo lsof -nP +c 15 |grep LISTEN
+}
+
 #
 # THRIFT ALIASES AND FUNCTIONS
 #
