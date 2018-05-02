@@ -73,7 +73,6 @@ plugins=(autojump
 	fabric
 	git
 	git-extras # You need to install git-extras first https://github.com/tj/git-extras
-	git-prompt
 	gitignore
 	golang
 	history
