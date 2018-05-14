@@ -28,16 +28,20 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 brew install kubectl
 ```
 
-### python
+### python and packages
 
 [grip](https://github.com/joeyespo/grip) uses python@2 and when both python2 and python3 are installed with brew,
 /usr/local/bin/python symlinks to python2, which I don't want. So manually I
 need to change the python path, which is really ugly:
 ```sh
 ln -sf /usr/local/bin/python3 /usr/local/bin/python
+ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
 ```
 For homebrew Python details: https://docs.brew.sh/Homebrew-and-Python
 
+```sh
+brew install pipenv
+```
 ### go
 
 ### [git-extras](https://github.com/tj/git-extras/blob/master/Installation.md)

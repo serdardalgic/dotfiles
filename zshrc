@@ -200,3 +200,11 @@ PROMPT='$(kube_ps1) '$PROMPT
 
 # Added by fzf installation through vim-plug
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# LANG and LC_ALL should be exported manually for pipenv to work.
+# See the following tickets for details:
+# https://github.com/pypa/pipenv/issues/187
+# https://bugs.python.org/issue18378
+# https://github.com/pypa/pipenv/issues/538
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
