@@ -198,6 +198,12 @@ noremap <leader><S-Tab> :tabprev<CR>
 " Map Leader-mn (,mn) to open a new tab
 noremap <leader>mn :tabnew<CR>
 
+" <leader>vimrc opens vimrc from any buffer
+map <leader>vimrc :tabe $MYVIMRC<cr>
+" Automatically source changes to vimrc when it's written
+autocmd bufwritepost .vimrc source $MYVIMRC
+
+
 " switch between tabs with ,1, ,2,..."
 map <leader>1 1gt
 map <leader>2 2gt
