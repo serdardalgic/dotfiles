@@ -25,6 +25,7 @@ Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 
@@ -370,3 +371,6 @@ let vim_markdown_preview_github=1
 """""""""""""""""""""
 let g:SimpylFold_docstring_preview=1
 
+" Tagbar
+"""""""""""""""""""""
+nmap <F8> :TagbarToggle<CR>
