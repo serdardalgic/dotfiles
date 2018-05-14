@@ -19,7 +19,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-surround' "See https://github.com/tpope/vim-surround for details
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer'}
 call plug#end()
 
 
