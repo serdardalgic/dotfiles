@@ -9,7 +9,7 @@ endif
 " Add vim-plug as a plugin for Vim help
 call plug#begin('~/.vim/plugged')
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'junegunn/vim-plug' 
+Plug 'junegunn/vim-plug'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -101,6 +101,9 @@ set viewdir=/tmp
 " deletes netrw's buffer once it's hidden (using ':q', for example)
 " https://vi.stackexchange.com/a/13012
 autocmd FileType netrw setl bufhidden=delete
+
+" Remove trailing whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
 
 """"""""""""""""""""""
 "  -[ FileTypes ]-   "
