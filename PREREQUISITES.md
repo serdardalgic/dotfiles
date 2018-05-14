@@ -12,9 +12,9 @@ Those apps are expected to be installed on OS:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-* git, vim, tmux, ack, curl
+* git, vim, tmux, ack, curl, htop
 ```sh
-brew install git vim tmux ack
+brew install git vim tmux ack curl htop
 ```
 
 * Docker, docker-compose https://www.docker.com/docker-mac
