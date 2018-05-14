@@ -6,26 +6,29 @@ update it when I have a pretty new Linux Box as a development computer
 
 Those apps are expected to be installed on OS:
 
-* brew:
-        https://brew.sh/        
+### [brew](https://brew.sh/)
 ```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-* git, vim, tmux, ack, curl, htop, grip
+### git, vim, tmux, ack, curl, htop, grip
 ```sh
 brew install git vim tmux ack curl htop grip
 ```
 
-* Docker, docker-compose https://www.docker.com/docker-mac
+### Docker, docker-compose
 
-* minikube, kubectl
-        https://kubernetes.io/docs/tasks/tools/install-minikube/
+https://www.docker.com/docker-mac
+
+### minikube, kubectl
+
+https://kubernetes.io/docs/tasks/tools/install-minikube/
+
 ```sh
 brew install kubectl
 ```
 
-* python
+### python
 
 [grip](https://github.com/joeyespo/grip) uses python@2 and when both python2 and python3 are installed with brew,
 /usr/local/bin/python symlinks to python2, which I don't want. So manually I
@@ -35,15 +38,15 @@ ln -sf /usr/local/bin/python3 /usr/local/bin/python
 ```
 For homebrew Python details: https://docs.brew.sh/Homebrew-and-Python
 
-* go
+### go
 
-* git-extras: 
-        https://github.com/tj/git-extras/blob/master/Installation.md
+### [git-extras](https://github.com/tj/git-extras/blob/master/Installation.md)
+
 ```sh
 brew install git-extras
 ```
 
-* zsh-syntax-highlighting:
+### [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 ```sh
 cd ~/.oh-my-zsh/custom/plugins/;
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
