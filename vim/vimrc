@@ -22,6 +22,7 @@ Plug 'tpope/vim-surround' "See https://github.com/tpope/vim-surround for details
 Plug 'tpope/vim-commentary' "See https://github.com/tpope/vim-commentary for details
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer'}
 Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
