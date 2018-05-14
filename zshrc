@@ -197,3 +197,6 @@ export DOCKER_ID_USER="serdard"
 # Remove the source here, once the kube-ps1 plugin is fixed.
 source /Users/serdar/.oh-my-zsh/plugins/kube-ps1/kube-ps1.zsh
 PROMPT='$(kube_ps1) '$PROMPT
+
+# Added by fzf installation through vim-plug
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
