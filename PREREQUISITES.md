@@ -12,9 +12,9 @@ Those apps are expected to be installed on OS:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-* git, vim, tmux, ack, curl, htop
+* git, vim, tmux, ack, curl, htop, grip
 ```sh
-brew install git vim tmux ack curl htop
+brew install git vim tmux ack curl htop grip
 ```
 
 * Docker, docker-compose https://www.docker.com/docker-mac
@@ -26,6 +26,14 @@ brew install kubectl
 ```
 
 * python
+
+[grip](https://github.com/joeyespo/grip) uses python@2 and when both python2 and python3 are installed with brew,
+/usr/local/bin/python symlinks to python2, which I don't want. So manually I
+need to change the python path, which is really ugly:
+```sh
+ln -sf /usr/local/bin/python3 /usr/local/bin/python
+```
+For homebrew Python details: https://docs.brew.sh/Homebrew-and-Python
 
 * go
 
