@@ -17,6 +17,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
 
@@ -317,3 +318,8 @@ endfunction
 " vim markdown plugin
 """""""""""""""""""""
 let vim_markdown_preview_github=1
+
+" SimpylFold
+"""""""""""""""""""""
+let g:SimpylFold_docstring_preview=1
+
