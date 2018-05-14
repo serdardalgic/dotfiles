@@ -60,7 +60,6 @@ set autoindent                  " Enable Autoindent
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set scrolloff=3			" Start scrolling three lines before the horizontal window border
 
-
 set splitright                  " Split vertical windows right to the current windows
 set splitbelow                  " Split horizontal windows below to the current windows
 set noswapfile                  " Don't use swapfile
@@ -74,6 +73,8 @@ set fileformats=unix,dos,mac
 
 " we don't want to edit these kind of files >.<
 set wildignore=*.o,*.obj,*.bak,*.exe,*.so,*.la,*.out,*.pyc,*.swp
+set wildignore+=*DS_Store*
+set wildignore+=*.png,*.jpg,*.gif
 
 set nobackup            " Dont create annoying backup files
 
