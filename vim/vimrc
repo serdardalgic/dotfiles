@@ -79,8 +79,14 @@ set nobackup            " Dont create annoying backup files
 
 " This enables us to undo files even if you exit Vim.
 if has('persistent_undo')
+  let myUndoDir=expand('~/.config/vim/tmp/undo/')
+  " Create dirs
+  if !isdirectory(myUndoDir)
+    call mkdir(myUndoDir, "p")
+  endif
+
+  let &undodir=myUndoDir
   set undofile
-  set undodir=~/.config/vim/tmp/undo//
 endif
 
 " Make vim save and load the folding of the document each time it loads"
