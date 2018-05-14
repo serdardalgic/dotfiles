@@ -18,6 +18,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'tmhedberg/SimpylFold'
+Plug 'tpope/vim-surround' "See https://github.com/tpope/vim-surround for details
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 
