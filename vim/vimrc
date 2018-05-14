@@ -112,6 +112,12 @@ autocmd FileType markdown set nocindent "Wraping fix for braces
 autocmd FileType markdown set expandtab "Use spaces for tabs, a requirement by markdown
 autocmd FileType markdown set shiftwidth=4
 
+" python
+autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80
+
+" web files
+autocmd BufNewFile,BufRead *.js, *.html, *.css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
 """""""""""""""""""""""""""""""""""""""""""""
 " Mappings, key bindings for plugins, etc.. "
 " ----------------------------------------- "
