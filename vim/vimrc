@@ -23,6 +23,8 @@ Plug 'tpope/vim-commentary' "See https://github.com/tpope/vim-commentary for det
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer'}
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 
