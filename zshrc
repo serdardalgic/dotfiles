@@ -210,3 +210,7 @@ PROMPT='$(kube_ps1) '$PROMPT
 # https://github.com/pypa/pipenv/issues/538
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# pipenv is installed by user installation, that's why path is needed to be modified:
+export PATH=$PATH:$(python -m site --user-base)/bin
+
