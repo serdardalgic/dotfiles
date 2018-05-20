@@ -105,6 +105,8 @@ plugins=(autojump
 	zsh_reload)
 
 
+# See https://github.com/robbyrussell/oh-my-zsh/issues/6835#issuecomment-390216875
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
