@@ -214,3 +214,9 @@ export LANG=en_US.UTF-8
 # pipenv is installed by user installation, that's why path is needed to be modified:
 export PATH=$PATH:$(python -m site --user-base)/bin
 
+# Needed for pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
