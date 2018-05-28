@@ -287,6 +287,12 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+" YouCompleteMe
+"""""""""""""""""""""
+let g:ycm_python_binary_path = 'python'
+autocmd FileType pythonnmap <leader>g :YcmCompleter GoTo<CR>
+autocmd FileType pythonnmap <leader>d :YcmCompleter GoToDefinition<CR>
+
 " vim-go
 """""""""""""""""""""
 let g:go_fmt_command = "goimports"
@@ -306,8 +312,8 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_generate_tags = 1
 
 " Open :GoDeclsDir with ctrl-g
-nmap <C-g> :GoDeclsDir<cr>
-imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
+autocmd FileType go nmap <C-g> :GoDeclsDir<cr>
+autocmd FileType go imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
 
 augroup go
@@ -377,3 +383,4 @@ let g:SimpylFold_docstring_preview=1
 " Tagbar
 """""""""""""""""""""
 nmap <F8> :TagbarToggle<CR>
+autocmd Filetype python nmap <Leader>t :TagbarToggle<CR>
