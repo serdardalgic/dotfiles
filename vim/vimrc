@@ -206,6 +206,8 @@ noremap <leader>mn :tabnew<CR>
 
 " <leader>vimrc opens vimrc from any buffer
 map <leader>vimrc :tabe $MYVIMRC<cr>
+" <leader>zshrc opens vimrc from any buffer
+map <leader>zshrc :tabe ~/.zshrc<cr>
 " Automatically source changes to vimrc when it's written
 autocmd bufwritepost .vimrc source $MYVIMRC
 
