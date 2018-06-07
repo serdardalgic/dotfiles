@@ -97,6 +97,7 @@ plugins=(autojump
 	terraform
 	themes
 	tmux
+	transfer
 	urltools
 	vagrant
 	vault
