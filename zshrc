@@ -221,6 +221,13 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+# oh-my-zsh aws plugin doesn't work well with pyenv, that's why I source it in that way
+# However, it stalls on the first tab completion, when you abort it with <Ctrl-c>, the next one
+# autocompletes perfectly. FIXME
+if pyenv which aws_zsh_completer.sh 1>/dev/null 2>&1; then
+  source "$(pyenv which aws_zsh_completer.sh)"
+fi
+
 # For gcloud
 source ~/google-cloud-sdk/completion.zsh.inc
 source ~/google-cloud-sdk/path.zsh.inc
