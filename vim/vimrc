@@ -21,12 +21,20 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-surround' "See https://github.com/tpope/vim-surround for details
 Plug 'tpope/vim-commentary' "See https://github.com/tpope/vim-commentary for details
 Plug 'tpope/vim-repeat'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer'}
+" YouCompleteMe is broken with pyenv python versions
+" FIXME: Investigate further:
+" https://github.com/Valloric/YouCompleteMe/issues/759
+" https://github.com/pyenv/pyenv/issues/65
+" https://github.com/Valloric/YouCompleteMe/issues/18
+" https://github.com/Valloric/YouCompleteMe/blob/master/README.md#i-get-vim-caught-deadly-signal-segv-on-vim-startup
+" https://github.com/Valloric/YouCompleteMe/issues/2057
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer'}
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
+Plug 'ekalinin/Dockerfile.vim'
 call plug#end()
 
 
@@ -299,6 +307,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " YouCompleteMe
+" FIXME: See the FIXME at the plug section of YouCompleteMe
 """""""""""""""""""""
 let g:ycm_python_binary_path = 'python'
 autocmd FileType pythonnmap <leader>g :YcmCompleter GoTo<CR>
