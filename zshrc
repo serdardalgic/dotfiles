@@ -220,6 +220,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
   # needed for YouCompleteMe plugin to be compiled https://github.com/Valloric/YouCompleteMe/issues/2057
+  # See https://github.com/pyenv/pyenv/wiki#how-to-build-cpython-with---enable-shared
   export PYTHON_CONFIGURE_OPTS="--enable-framework"
 fi
 
