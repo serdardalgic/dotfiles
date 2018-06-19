@@ -219,6 +219,8 @@ export PATH=$PATH:$(python -m site --user-base)/bin
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
+  # needed for YouCompleteMe plugin to be compiled https://github.com/Valloric/YouCompleteMe/issues/2057
+  export PYTHON_CONFIGURE_OPTS="--enable-framework"
 fi
 
 # oh-my-zsh aws plugin doesn't work well with pyenv, that's why I source it in that way
