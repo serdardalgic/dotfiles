@@ -115,6 +115,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 """"""""""""""""""""""
 "  -[ FileTypes ]-   "
 " ------------------ "
+" bash
+autocmd FileType sh set autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+
 " mail
 autocmd FileType mail,human set formatoptions+=t textwidth=80
 
@@ -127,8 +130,16 @@ autocmd FileType markdown set shiftwidth=4
 " python
 autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80
 
+" ruby
+autocmd Filetype ruby set autoindent tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
 " web files
 autocmd BufNewFile,BufRead *.js, *.html, *.css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+" YAML
+autocmd Filetype yaml set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+
+" For golang, see augroup go to the end of this file
 
 """""""""""""""""""""""""""""""""""""""""""""
 " Mappings, key bindings for plugins, etc.. "
