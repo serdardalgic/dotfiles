@@ -192,8 +192,6 @@ export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 export DOCKER_ID_USER="serdard"
-# Prints a random quote every time (It takes a long time to open a new terminal, so, abort!
-# quote
 
 # Following line depends on kube-ps1 plugin
 PROMPT='$(kube_ps1) '$PROMPT
