@@ -86,13 +86,11 @@ plugins=(autojump
         kube-ps1
 	kubectl
 	man
-	minikube # custom plugin ???
 	nyan
 	pep8
 	pip
 	pylint
 	python
-	rand-quote
 	redis-cli
 	rsync
 	sudo
@@ -199,6 +197,13 @@ export DOCKER_ID_USER="serdard"
 
 # Following line depends on kube-ps1 plugin
 PROMPT='$(kube_ps1) '$PROMPT
+
+# Lazy load minikube
+minikube() {
+  unset minikube
+  eval "$(command minikube completion zsh)"
+  minikube $@
+}
 
 # Added by fzf installation through vim-plug
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
