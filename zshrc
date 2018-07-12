@@ -211,23 +211,20 @@ PROMPT='$(kube_ps1) '$PROMPT
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# pipenv is installed by user installation, that's why path is needed to be modified:
-export PATH=$PATH:$(python -m site --user-base)/bin
-
-# Needed for pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-  # needed for YouCompleteMe plugin to be compiled https://github.com/Valloric/YouCompleteMe/issues/2057
-  # See https://github.com/pyenv/pyenv/wiki#how-to-build-cpython-with---enable-shared
-  export PYTHON_CONFIGURE_OPTS="--enable-framework"
-fi
-
-# oh-my-zsh aws plugin doesn't work well with pyenv, that's why I source it in that way
-# However, it stalls on the first tab completion, when you abort it with <Ctrl-c>, the next one
-# autocompletes perfectly. FIXME
-if pyenv which aws_zsh_completer.sh 1>/dev/null 2>&1; then
-  source "$(pyenv which aws_zsh_completer.sh)"
+# Lazy load pyenv
+if command -v pyenv 1> /dev/null 2>&1; then
+  local PYENV_SHIMS="${PYENV_ROOT:-${HOME}/.pyenv}/shims"
+  export PATH="${PYENV_SHIMS}:${PATH}"
+  function pyenv() {
+    unset pyenv
+    eval "$(command pyenv init -)"
+    eval "$(command pyenv virtualenv-init -)"
+    # oh-my-zsh aws plugin doesn't work well with pyenv, that's why I source it in that way
+    if pyenv which aws_zsh_completer.sh 1>/dev/null 2>&1; then
+      source "$(pyenv which aws_zsh_completer.sh)"
+    fi
+    pyenv $@
+  }
 fi
 
 # Kompose
