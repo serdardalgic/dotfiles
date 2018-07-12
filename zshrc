@@ -230,7 +230,7 @@ if command -v pyenv 1> /dev/null 2>&1; then
   }
 fi
 
-# Kompose
+# Lazy load Kompose
 if command -v kompose 1>/dev/null 2>&1; then
   function kompose() {
     unset kompose
@@ -239,7 +239,8 @@ if command -v kompose 1>/dev/null 2>&1; then
   }
 fi
 
-# For gcloud
+# gcloud
 source ~/google-cloud-sdk/completion.zsh.inc
 source ~/google-cloud-sdk/path.zsh.inc
+
 # zprof
