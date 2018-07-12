@@ -234,7 +234,11 @@ fi
 
 # Kompose
 if command -v kompose 1>/dev/null 2>&1; then
-  source <(kompose completion zsh)
+  function kompose() {
+    unset kompose
+    eval "$(command kompose completion zsh)"
+    kompose $@
+  }
 fi
 
 # For gcloud
