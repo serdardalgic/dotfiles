@@ -1,3 +1,6 @@
+# zmodload zsh/zprof and the zprof at the end of the zshrc file
+# are used to debug and profile zsh load times.
+# zmodload zsh/zprof
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -235,3 +238,4 @@ fi
 # For gcloud
 source ~/google-cloud-sdk/completion.zsh.inc
 source ~/google-cloud-sdk/path.zsh.inc
+# zprof
