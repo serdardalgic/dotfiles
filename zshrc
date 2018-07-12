@@ -80,7 +80,7 @@ plugins=(autojump
 	iterm2
 	iwhois # I'm not so sure to keep this plugin :S
 	jira
-        #kube-ps1 #kube-ps1.zsh file should be renamed, comment in when it's fixed
+        kube-ps1
 	kubectl
 	man
 	minikube # custom plugin ???
@@ -197,8 +197,7 @@ export DOCKER_ID_USER="serdard"
 # Prints a random quote every time (It takes a long time to open a new terminal, so, abort!
 # quote
 
-# Remove the source here, once the kube-ps1 plugin is fixed.
-source /Users/serdar/.oh-my-zsh/plugins/kube-ps1/kube-ps1.zsh
+# Following line depends on kube-ps1 plugin
 PROMPT='$(kube_ps1) '$PROMPT
 
 # Added by fzf installation through vim-plug
