@@ -162,7 +162,8 @@ relation_ob() {
 add_serdars_ssh_keys() {
     DIR=~/.ssh/privat
     if [ "$(ls -A $DIR)" ]; then
-        for privat_key in $DIR/*; do
+	# Do not add public keys
+	for privat_key in `find $DIR -type f ! -name "*.*"`; do
             ssh-add $privat_key
         done
     fi
