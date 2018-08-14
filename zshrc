@@ -171,6 +171,11 @@ add_serdars_ssh_keys() {
 
 add_serdars_ssh_keys
 
+gitlocalconfigreply() {
+    git config --local user.name "Serdar Dalgic"
+    git config --local user.email "s.dalgic@reply.de"
+}
+
 nsalistens() {
     # shows which ports are being listened on local machine
     sudo lsof -nP +c 15 |grep LISTEN
