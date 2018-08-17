@@ -254,3 +254,9 @@ source ~/google-cloud-sdk/completion.zsh.inc
 source ~/google-cloud-sdk/path.zsh.inc
 
 # zprof
+
+#AWSume alias to source the AWSume script. It's installed on venv2.7
+alias awsume=". \$(pyenv which awsume)"
+# TODO:
+# I'm not so sure about the following addition to the fpath. Investigate!
+fpath=(/usr/local/share/zsh/site-functions $fpath)
