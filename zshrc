@@ -119,7 +119,7 @@ update_git_repo() {
     echo
     echo "UPDATING $repo"
     echo
-    cd $repo
+    pushd $repo > /dev/null
     git fetch --prune
     git stash
     git co master
@@ -132,16 +132,25 @@ update_git_repo() {
         git co @{-1}
     fi
     git stash pop
-    cd ..
+    popd > /dev/null
 }
 
-# TODO: Make the ob functions more generic.
-# FUNCTION TO UPDATE OB REPOS
-update_ob() {
-    cd ~/Development/ORDERBIRD
-    for repo in `cat .update`; do
-        update_git_repo $repo
-    done
+update_all_git_repos() {
+    # If no args are given, update the storm reply repositories
+    local dir=${1:-~/Development/STORM_REPLY}
+    cd ${dir}
+    if [[ -a ".update" ]]; then
+        for repo in `cat .update`; do
+            update_git_repo $repo
+        done
+    else
+	echo "No .update file is found, creating one..."
+	for dir in `find . -maxdepth 2 -name .git`;
+	do
+	    echo `dirname $dir` >> .update;
+        done
+	echo "Please check the autocreated .update file and run $funcstack[1] command again."
+    fi
 }
 
 # FUNCTION THAT SHOWS THE RELATION BETWEEN MASTER AND DEVELOP IN OB REPOS
