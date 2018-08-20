@@ -175,6 +175,44 @@ add_serdars_ssh_keys() {
 
 add_serdars_ssh_keys
 
+# Used for creating an ~/.ssh/config file.
+#
+# Either you call it without any arguments and it add all the configuration
+# under ~/.ssh/sshconfigd/{public/private} directories
+# or
+# You would specify which configurations you want to add to your ~/.ssh/config
+# file
+create_ssh_config() {
+    rm ~/.ssh/config
+    if (( $# > 0 )); then
+        for arg;
+	do cat $arg >> ~/.ssh/config;
+	done;
+    else
+	# (n) is a zsh function for numerical sort
+        for pub in ~/.ssh/sshconfigd/public/*(n);
+        do
+            cat $pub >> ~/.ssh/config
+        done
+        for priv in ~/.ssh/sshconfigd/private/*(n);
+        do
+            cat $priv >> ~/.ssh/config
+        done
+    fi
+
+    # if (( $# == 0 ))
+    # then cat ~/.ssh/other_confs/*(n) > ~/.ssh/config;
+    # else
+	# rm ~/.ssh/config;
+    #     for arg
+	# do cat ~/.ssh/other_confs/$arg >> ~/.ssh/config
+	# done
+    # fi
+}
+#create_ssh_config public/01-bitbucket.sshconfig public/99-default.sshconfig
+# The following is the same with running create_ssh_config without any arguments
+create_ssh_config ~/.ssh/sshconfigd/public/*(n) ~/.ssh/sshconfigd/private/*(n)
+
 gitlocalconfigreply() {
     git config --local user.name "Serdar Dalgic"
     git config --local user.email "s.dalgic@reply.de"
