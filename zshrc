@@ -208,6 +208,7 @@ create_ssh_config() {
             cat $priv >> ~/.ssh/config
         done
     fi
+    echo "~/.ssh/config is regenerated."
 
     # if (( $# == 0 ))
     # then cat ~/.ssh/other_confs/*(n) > ~/.ssh/config;
