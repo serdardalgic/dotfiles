@@ -209,16 +209,8 @@ create_ssh_config() {
         done
     fi
     echo "~/.ssh/config is regenerated."
-
-    # if (( $# == 0 ))
-    # then cat ~/.ssh/other_confs/*(n) > ~/.ssh/config;
-    # else
-	# rm ~/.ssh/config;
-    #     for arg
-	# do cat ~/.ssh/other_confs/$arg >> ~/.ssh/config
-	# done
-    # fi
 }
+
 #create_ssh_config public/01-bitbucket.sshconfig public/99-default.sshconfig
 # The following is the same with running create_ssh_config without any arguments
 create_ssh_config ~/.ssh/sshconfigd/public/*(n) ~/.ssh/sshconfigd/private/*(n)
