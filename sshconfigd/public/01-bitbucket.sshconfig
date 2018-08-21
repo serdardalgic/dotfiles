@@ -1,0 +1,6 @@
+Host bitbucket.org-serdarreply
+  HostName bitbucket.org
+  User git
+  IdentityFile ~/.ssh/privat/serdarreply
+  IdentitiesOnly yes
+

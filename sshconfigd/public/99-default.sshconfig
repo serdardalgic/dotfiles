@@ -1,9 +1,3 @@
-Host bitbucket.org-serdarreply
-  HostName bitbucket.org
-  User git
-  IdentityFile ~/.ssh/privat/serdarreply
-  IdentitiesOnly yes
-
 Host *+*
 # User ubuntu
 # User ec2-user
@@ -15,3 +9,4 @@ Host *
   ForwardAgent yes
 # Disable SSH connections on ipv6
   AddressFamily inet
+
