@@ -287,6 +287,9 @@ if command -v kompose 1>/dev/null 2>&1; then
   }
 fi
 
+# ack aliases
+alias terrack="ack --ignore-dir=.terraform --terraform"
+
 # gcloud
 source ~/google-cloud-sdk/completion.zsh.inc
 source ~/google-cloud-sdk/path.zsh.inc
