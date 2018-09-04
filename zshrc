@@ -197,13 +197,13 @@ create_ssh_config() {
 	done;
     else
 	# (n) is a zsh function for numerical sort
-        for pub in ~/.ssh/sshconfigd/public/*(n);
-        do
-            cat $pub >> ~/.ssh/config
-        done
         for priv in ~/.ssh/sshconfigd/private/*(n);
         do
             cat $priv >> ~/.ssh/config
+        done
+        for pub in ~/.ssh/sshconfigd/public/*(n);
+        do
+            cat $pub >> ~/.ssh/config
         done
     fi
     echo "~/.ssh/config is regenerated."
@@ -211,7 +211,7 @@ create_ssh_config() {
 
 #create_ssh_config public/01-bitbucket.sshconfig public/99-default.sshconfig
 # The following is the same with running create_ssh_config without any arguments
-create_ssh_config ~/.ssh/sshconfigd/public/*(n) ~/.ssh/sshconfigd/private/*(n)
+create_ssh_config ~/.ssh/sshconfigd/private/*(n) ~/.ssh/sshconfigd/public/*(n)
 
 gitlocalconfigreply() {
     git config --local user.name "Serdar Dalgic"
