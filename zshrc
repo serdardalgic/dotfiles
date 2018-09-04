@@ -301,3 +301,7 @@ alias awsume=". \$(pyenv which awsume)"
 # TODO:
 # I'm not so sure about the following addition to the fpath. Investigate!
 fpath=(/usr/local/share/zsh/site-functions $fpath)
+
+# mysql-client is keg-only, not symlinked into /usr/local , to avoid conflicts with mysql package
+# That's why I import the PATH to have mysql-client first in my PATH
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
