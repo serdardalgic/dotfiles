@@ -59,7 +59,6 @@ COMPLETION_WAITING_DOTS="true"
 #
 plugins=(autojump
 	bgnotify
-	brew
 	celery
 	colored-man-pages
 	colorize
@@ -86,7 +85,6 @@ plugins=(autojump
         kube-ps1
 	kubectl
 	man
-	nyan
 	pep8
 	pip
 	pylint
