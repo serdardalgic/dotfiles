@@ -224,6 +224,25 @@ nsalistens() {
     sudo lsof -nP +c 15 |grep LISTEN
 }
 
+no_newline_at_the_end() {
+    printf %s "$(cat $1)" > $1
+}
+
+extract_all_gz() {
+    if (($# == 0 ))
+    then searchdir="."
+    else searchdir=$1; fi
+    # Extract comes from zsh extract plugin
+    find $searchdir -name "*.gz" | while read filename; do extract $filename; done
+}
+
+compress_all_to_gz() {
+    if (($# == 0 ))
+    then searchdir="."
+    else searchdir=$1; fi
+    find $searchdir -type file -name "*" | while read filename; do gzip $filename; done
+}
+
 #
 # THRIFT ALIASES AND FUNCTIONS
 #
