@@ -1,6 +1,7 @@
 [user]
 	name = Serdar Dalgıç
 	email = sd@serdardalgic.org
+	# TODO: Find a sustainable way to update the signingkey
 	signingkey = D0DDFE9B
 [alias]
     st = status
