@@ -167,8 +167,8 @@ relation_ob() {
     done
 }
 
-add_serdars_ssh_keys() {
-    DIR=~/.ssh/privat
+add_ssh_keys_in_the_folder() {
+    DIR=$1
     if [ "$(ls -A $DIR)" ]; then
 	# Do not add public keys, ending with .pub
 	for privat_key in `find $DIR -type f ! -name "*.*"`; do
@@ -179,6 +179,10 @@ add_serdars_ssh_keys() {
 	    ssh-add $pem_file
         done
     fi
+}
+
+add_serdars_ssh_keys() {
+    add_ssh_keys_in_the_folder ~/.ssh/privat
 }
 
 add_serdars_ssh_keys
