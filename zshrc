@@ -118,7 +118,7 @@ update_git_repo() {
     echo
     pushd $repo > /dev/null
     git fetch --prune
-    git stash
+    local stash_output=`git stash`
     git co master
     git pull origin master
     if [[ `git branch --list develop ` ]]; then
@@ -128,7 +128,9 @@ update_git_repo() {
     else
         git co @{-1}
     fi
-    git stash pop
+    if [ "${stash_output}" != "No local changes to save" ]; then
+	git stash pop
+    fi
     popd > /dev/null
 }
 
