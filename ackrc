@@ -24,6 +24,7 @@
 # less -r
 
 --ignore-dir=.idea/
+--ignore-dir=.terraform/
 --ignore-dir=node_modules/
 
 #make sure ack knows how to search common filetypes used in rails projects
