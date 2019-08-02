@@ -264,13 +264,6 @@ export DOCKER_ID_USER="serdard"
 # Following line depends on kube-ps1 plugin
 PROMPT='$(kube_ps1) '$PROMPT
 
-# Lazy load minikube
-minikube() {
-  unset minikube
-  eval "$(command minikube completion zsh)"
-  minikube $@
-}
-
 # Added by fzf installation through vim-plug
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
