@@ -80,7 +80,6 @@ plugins=(autojump
 	history
 	history-substring-search
 	iterm2
-	iwhois # I'm not so sure to keep this plugin :S
 	jira
         kube-ps1
 	kubectl
