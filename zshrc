@@ -57,7 +57,8 @@ COMPLETION_WAITING_DOTS="true"
 #
 #
 #
-plugins=(autojump
+plugins=(alias-finder
+        autojump
 	bgnotify
 	celery
 	colored-man-pages
