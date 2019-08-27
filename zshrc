@@ -190,34 +190,47 @@ add_serdars_ssh_keys
 
 # Used for creating an ~/.ssh/config file.
 #
-# Either you call it without any arguments and it add all the configuration
+# Either you call it without any arguments and it adds all the .sshconfig files
 # under ~/.ssh/sshconfigd/{public/private} directories
 # or
 # You would specify which configurations you want to add to your ~/.ssh/config
 # file
 create_ssh_config() {
-    rm ~/.ssh/config
+    if ! ln ~/.ssh/config ~/.ssh/config.lock 2>/dev/null; then
+	    return 1
+    fi
+    mv ~/.ssh/config ~/.ssh/old_config
     if (( $# > 0 )); then
         for arg;
-	do cat $arg >> ~/.ssh/config;
+	do cat $arg >> ~/.ssh/config; echo >> ~/.ssh/config
 	done;
     else
-	# (n) is a zsh function for numerical sort
-        for priv in ~/.ssh/sshconfigd/private/*(n);
-        do
+        # (n) is a zsh function for numerical sort
+	echo "################################################################" >> ~/.ssh/config
+	echo "# Private ssh configs from ~/.ssh/sshconfigd/private directory #" >> ~/.ssh/config
+	echo "################################################################" >> ~/.ssh/config
+        for priv in ~/.ssh/sshconfigd/private/*.sshconfig(n);
+	do
             cat $priv >> ~/.ssh/config
+	    echo >> ~/.ssh/config
         done
-        for pub in ~/.ssh/sshconfigd/public/*(n);
+	echo "##############################################################" >> ~/.ssh/config
+	echo "# Public ssh configs from ~/.ssh/sshconfigd/public directory #" >> ~/.ssh/config
+	echo "##############################################################" >> ~/.ssh/config
+        for pub in ~/.ssh/sshconfigd/public/*.sshconfig(n);
         do
             cat $pub >> ~/.ssh/config
+            echo >> ~/.ssh/config
         done
     fi
     echo "~/.ssh/config is regenerated."
+    rm -f ~/.ssh/config.lock
 }
 
 #create_ssh_config public/01-bitbucket.sshconfig public/99-default.sshconfig
 # The following is the same with running create_ssh_config without any arguments
-create_ssh_config ~/.ssh/sshconfigd/private/*(n) ~/.ssh/sshconfigd/public/*(n)
+# create_ssh_config ~/.ssh/sshconfigd/private/*(n) ~/.ssh/sshconfigd/public/*(n)
+create_ssh_config
 
 gitlocalconfigreply() {
     git config --local user.name "Serdar Dalgic"
