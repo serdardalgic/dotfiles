@@ -1,4 +1,6 @@
 SHELL := /bin/bash # Use bash syntax
+# If you install bash4 with Mac Brew, use the following line. Default Bash in mac is still Bash3 :/
+#SHELL := /usr/local/bin/bash # Use bash syntax
 
 SSHCONFIG_PRIVATE_BACKUP_DIR = ~/.ssh/sshconfigd.backup
 # If mkdir is an alias, use it
@@ -27,12 +29,9 @@ ack:
 	[ -f ~/.ackrc ] || ln -s $(PWD)/ackrc ~/.ackrc
 
 ssh:
+	echo
+	if [ -d ${SSHCONFIG_PRIVATE_BACKUP_DIR} ] ; then ${MKDIR} -p ~/.ssh/sshconfigd/private; cp -a ${SSHCONFIG_PRIVATE_BACKUP_DIR}/private/* ~/.ssh/sshconfigd/private; rm -rf $(SSHCONFIG_PRIVATE_BACKUP_DIR); fi
 	[ -d ~/.ssh/sshconfigd ] || ${MKDIR} -p ~/.ssh/sshconfigd/private
-	if [ -d ${SSHCONFIG_PRIVATE_BACKUP_DIR}]; then \
-	    cp -a ${SSHCONFIG_PRIVATE_BACKUP_DIR}/private/* ~/.ssh/sshconfigd/private
-	    # FIXME:Do I really need to remove this backup dir?
-	    rm -r $(SSHCONFIG_PRIVATE_BACKUP_DIR)
-	fi
 	[ -d ~/.ssh/sshconfigd/public ] || ln -s $(PWD)/sshconfigd/public ~/.ssh/sshconfigd/public
 
 clean:
@@ -42,4 +41,4 @@ clean:
 	rm -r ~/.ssh/sshconfigd
 	rm -f ~/.vimrc ~/.zshrc ~/.vim ~/.zsh ~/.gitconfig ~/.gitignore ~/.tmux.conf ~/.ackrc ~/.ssh/config
 
-.PHONY: all
+.PHONY: all vim

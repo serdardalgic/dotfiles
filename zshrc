@@ -57,8 +57,7 @@ COMPLETION_WAITING_DOTS="true"
 #
 #
 #
-plugins=(alias-finder
-        autojump
+plugins=(autojump
 	bgnotify
 	celery
 	colored-man-pages
@@ -74,6 +73,7 @@ plugins=(alias-finder
 	encode64
 	extract
 	fabric
+	# fly
 	git
 	git-extras # You need to install git-extras first https://github.com/tj/git-extras
 	gitignore
@@ -259,6 +259,15 @@ compress_all_to_gz() {
     then searchdir="."
     else searchdir=$1; fi
     find $searchdir -type file -name "*" | while read filename; do gzip $filename; done
+}
+
+random_str_length() {
+    if (($# == 0 ))
+    then length=8
+    else length=$1; fi
+    if (($length > 32))
+    then echo "Length must be at most 32 characters"; return; fi
+    echo $RANDOM | shasum | cut -b-$length
 }
 
 #

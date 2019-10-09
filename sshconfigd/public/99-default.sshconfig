@@ -6,7 +6,7 @@ Host *+*
   ProxyCommand ssh -F ~/.ssh/config -q -A -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=false -x $(echo %h | sed 's/+[^+]*$//;s/\([^+%%]*\)%%\([^+]*\)$/\2 -l \1/;s/:/ -p /') -W $(echo %h | sed 's/^.*+//;/:/!s/$/:%p/;')
 
 Host *
-  ForwardAgent yes
+  #ForwardAgent yes
 # Disable SSH connections on ipv6
   AddressFamily inet
 
