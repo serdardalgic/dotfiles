@@ -47,8 +47,6 @@
     editor = DYLD_FORCE_FLAT_NAMESPACE=1 vim
     # See https://stackoverflow.com/a/31399632/566715
     pager = less -FRSX
-#[credential]
-#	helper = osxkeychain
 [github]
     user = serdardalgic
 [filter "hawser"]
