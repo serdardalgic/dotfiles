@@ -19,6 +19,8 @@
     sha = "!sh -c 'git rev-parse --short \"$1\"' -"
 # Show files ignored by git:
     ign = ls-files -o -i --exclude-standard
+# Refetch all the tags from remote
+    pt = !git tag -l | xargs git tag -d && git fetch -t
 
 [commit]
     gpgsign = true
