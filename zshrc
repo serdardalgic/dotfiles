@@ -293,6 +293,7 @@ PROMPT='$(kube_ps1) '$PROMPT
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+export PATH=$PATH:${HOME}/.pyenv/bin
 # Lazy load pyenv
 if command -v pyenv 1> /dev/null 2>&1; then
   local PYENV_SHIMS="${PYENV_ROOT:-${HOME}/.pyenv}/shims"
