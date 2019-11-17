@@ -153,21 +153,6 @@ update_all_git_repos() {
     fi
 }
 
-# FUNCTION THAT SHOWS THE RELATION BETWEEN MASTER AND DEVELOP IN OB REPOS
-relation_ob() {
-    cd ~/Development/ORDERBIRD
-    for repo in `cat .update`; do
-        cd $repo
-        if [[ `git branch --list develop ` ]]; then
-            echo
-            echo "RELATION FOR $repo"
-            echo
-            git relation master develop
-        fi
-        cd ..
-    done
-}
-
 add_ssh_keys_in_the_folder() {
     DIR=$1
     if [ "$(ls -A $DIR)" ]; then
