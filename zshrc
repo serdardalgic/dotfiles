@@ -283,6 +283,7 @@ export LANG=en_US.UTF-8
 export PATH=$PATH:${HOME}/.pyenv/bin
 # Lazy load pyenv
 if command -v pyenv 1> /dev/null 2>&1; then
+  echo "lazy loading pyenv"
   local PYENV_SHIMS="${PYENV_ROOT:-${HOME}/.pyenv}/shims"
   export PATH="${PYENV_SHIMS}:${PATH}"
   function pyenv() {
@@ -291,6 +292,9 @@ if command -v pyenv 1> /dev/null 2>&1; then
     eval "$(command pyenv virtualenv-init -)"
     # oh-my-zsh aws plugin doesn't work well with pyenv, that's why I source it in that way
     if pyenv which aws_zsh_completer.sh 1>/dev/null 2>&1; then
+      # aws zsh completion is enabled the first time you run pyenv on your current shell
+      # TODO: Is there a better way to manage this within pyenv? Investigate.
+      echo "lazy loading aws_zsh_completer over pyenv"
       source "$(pyenv which aws_zsh_completer.sh)"
     fi
     pyenv $@
@@ -317,7 +321,7 @@ if [ -f ~/google-cloud-sdk/completion.zsh.inc ]; then source ~/google-cloud-sdk/
 
 # zprof
 
-#AWSume alias to source the AWSume script. It's installed on venv2.7
+#AWSume alias to source the AWSume script.
 alias awsume=". \$(pyenv which awsume)"
 # TODO:
 # I'm not so sure about the following addition to the fpath. Investigate!
@@ -326,3 +330,4 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 # mysql-client is keg-only, not symlinked into /usr/local , to avoid conflicts with mysql package
 # That's why I import the PATH to have mysql-client first in my PATH
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
