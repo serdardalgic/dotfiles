@@ -307,6 +307,9 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" Add extra directory to runtimepath for my personal snippets
+set rtp+=~/.vim/mycoolsnippets
+
 
 " YouCompleteMe
 " FIXME: See the FIXME at the plug section of YouCompleteMe
