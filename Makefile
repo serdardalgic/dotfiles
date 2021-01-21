@@ -27,12 +27,6 @@ ack:
 	[ -f ~/.ackrc ] || ln -s $(PWD)/ackrc ~/.ackrc
 
 ssh:
-	[ -d ~/.ssh/sshconfigd ] || ${MKDIR} -p ~/.ssh/sshconfigd/private
-	if [ -d ${SSHCONFIG_PRIVATE_BACKUP_DIR}]; then \
-	    cp -a ${SSHCONFIG_PRIVATE_BACKUP_DIR}/private/* ~/.ssh/sshconfigd/private
-	    # FIXME:Do I really need to remove this backup dir?
-	    rm -r $(SSHCONFIG_PRIVATE_BACKUP_DIR)
-	fi
 	[ -d ~/.ssh/sshconfigd/public ] || ln -s $(PWD)/sshconfigd/public ~/.ssh/sshconfigd/public
 
 clean:

@@ -399,7 +399,12 @@ endfunction
 
 " vim markdown plugin
 """""""""""""""""""""
+" For more info, visit https://github.com/JamshedVesuna/vim-markdown-preview
 let vim_markdown_preview_github=1
+" Uncomment the following line if you have images in your markdown file
+" The vim-markdown-preview.html will be created in PWD instead of tmp
+"let vim_markdown_preview_toggle=1
+let vim_markdown_preview_browser='Google Chrome'
 
 " SimpylFold
 """""""""""""""""""""

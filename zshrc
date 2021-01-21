@@ -313,6 +313,36 @@ fi
 # ack aliases
 alias terrack="ack --ignore-dir=.terraform --terraform --json"
 
+ackword() {
+  ack "\w*$1\w*"
+}
+
+# Kubernetes related aliases:
+alias kgevsorted="kubectl get events --sort-by='.lastTimestamp'"
+alias kgevsortedw="kubectl get events --field-selector type=Warning --sort-by='.lastTimestamp'"
+
+#alias cleanfilename="mv $1 `echo $1 | cut -d? -f1`"
+
+bundle_all_git_repos() {
+    SOURCE_DIR=$1
+    TARGET_DIR=$2
+
+    mkdir -p $TARGET_DIR
+
+    for dir in $(find $SOURCE_DIR -type d -name .git);
+    do
+	export bundle_dirname="$(dirname $dir | cut -d'/' -f2- | sed -e 's/\//\-\_\-/g')";
+	echo "Checking $bundle_dirname";
+	pushd $(dirname $dir) >/dev/null;
+	export bundle_name="$TARGET_DIR/$bundle_dirname.bundle"
+	echo "Creating bundle: $bundle_name"
+	git bundle create $TARGET_DIR/$bundle_dirname.bundle --all;
+	popd >/dev/null;
+	echo "*****************";
+    done
+}
+
+
 # gcloud
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f ~/google-cloud-sdk/path.zsh.inc ]; then source ~/google-cloud-sdk/path.zsh.inc; fi
@@ -331,3 +361,5 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 # That's why I import the PATH to have mysql-client first in my PATH
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
+# Contains some helper functions for working in VW project
+source ~/.vw_helper_functions
