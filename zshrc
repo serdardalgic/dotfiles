@@ -106,8 +106,10 @@ plugins=(alias-finder
 	zsh_reload)
 
 
+# TODO: It looks like there is no need for ZSH_DISABLE_COMPFIX=true any more
+# let's keep it for a while, and in case it's not needed, let's remove it
 # See https://github.com/robbyrussell/oh-my-zsh/issues/6835#issuecomment-390216875
-ZSH_DISABLE_COMPFIX=true
+# ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # Source specialized helper functions
