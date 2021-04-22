@@ -66,6 +66,7 @@ plugins=(alias-finder
 	copybuffer
 	cp
 	debian # Some nice aliases here, check it: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#debian
+	direnv # install direnv program manually
 	docker
 	docker-compose
 	dotenv
