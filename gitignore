@@ -1,5 +1,5 @@
 
-# Created by https://www.gitignore.io/api/osx,go,python,vim,django
+# Created by https://www.gitignore.io/api/osx,go,python,vim,django,direnv
 
 ### Django ###
 *.log
@@ -9,6 +9,10 @@ __pycache__/
 local_settings.py
 db.sqlite3
 media
+
+### direnv ###
+.direnv/
+.envrc
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
