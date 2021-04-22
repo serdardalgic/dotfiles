@@ -20,16 +20,8 @@ brew install git vim tmux ack curl htop grip ctags
 
 https://www.docker.com/docker-mac
 
-### minikube, kubectl
-
-https://kubernetes.io/docs/tasks/tools/install-minikube/
-
-```sh
-brew install kubectl
-```
-
 ### python and packages
-
+TODO: Update me
 [grip](https://github.com/joeyespo/grip) uses python@2 and when both python2 and python3 are installed with brew,
 /usr/local/bin/python symlinks to python2, which I don't want. So manually I
 need to change the python path, which is really ugly:

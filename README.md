@@ -1,12 +1,18 @@
 ## Personal dotfiles
 
+Note in 2021: I keep the files up-to-date, but I'm just to lazy to update the
+README and Makefile accordingly :)
+
+Read the configuration first before running any make commands, they might fail.
+
+
 These are my personal dotfiles that I'm using on Linux. Originated from the
 first repository of Fatih Arslan's dotfiles: https://github.com/fatih/dotfiles
 later on, I've added my stuff. (Later on, Fatih created a unique project called
 Subvim: https://github.com/fatih/subvim) Thanks Fatih for his work ;)
 
 My configuration changed a lot since I've forked the dotfiles from Fatih's, so
-it is now a brand new project. 
+it is now a brand new project.
 
 My dotfiles include:
 
@@ -24,7 +30,7 @@ a different branch called `mymaster` in my oh-my-zsh fork. I keep my version of
 oh-my-zsh installation frequently updated.
 
 I've taken some noted to modules_explanations_vim.txt file, I'll turn them into
-documentation a.s.a.p. 
+documentation a.s.a.p.
 
 P.S. If you're using vim, checkout the mac_settings branch instead of master.
 
