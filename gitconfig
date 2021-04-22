@@ -45,6 +45,7 @@
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     editor = DYLD_FORCE_FLAT_NAMESPACE=1 vim
+    excludesFile=~/.gitignore
     # See https://stackoverflow.com/a/31399632/566715
     pager = less -FRSX
 [github]
