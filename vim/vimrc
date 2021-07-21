@@ -17,6 +17,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" vim-markdown-preview doesn't look like it's being developed anymore
+" switch to something else
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-surround' "See https://github.com/tpope/vim-surround for details
