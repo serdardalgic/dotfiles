@@ -2,7 +2,7 @@
 # are used to debug and profile zsh load times.
 # zmodload zsh/zprof
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -22,6 +22,10 @@ ZSH_THEME="re5et"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 ## case-insensitive (all),partial-word and then substring completion
+#
+# TODO: The following if checks for CASE_SENSITIVE may not be needed.
+# as of 12.Oct.2021, It doesn't exist in the zshrc template
+# https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/templates/zshrc.zsh-template
 if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
   zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
   unset CASE_SENSITIVE
