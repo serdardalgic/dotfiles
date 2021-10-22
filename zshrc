@@ -103,7 +103,7 @@ plugins=(alias-finder
 	vault
 	web-search
 	zsh-syntax-highlighting # cd ~/.oh-my-zsh/custom/plugins/; git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-	zsh_reload)
+	)
 
 
 # TODO: It looks like there is no need for ZSH_DISABLE_COMPFIX=true any more
