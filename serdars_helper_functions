@@ -10,8 +10,8 @@ update_git_repo() {
     pushd $repo > /dev/null
     git fetch --prune
     local stash_output=`git stash`
-    git co master
-    git pull origin master
+    git co main
+    git pull origin main
     if [[ `git branch --list develop ` ]]; then
         git co develop
         git pull origin develop
