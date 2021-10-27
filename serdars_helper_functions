@@ -26,9 +26,8 @@ update_git_repo() {
 }
 
 update_all_git_repos() {
-    #TODO: Set a new default dir
-    # If no args are given, update the storm reply repositories
-    local dir=${1:-~/Development/}
+    # If no args are given, take the current dir as a first argument
+    local dir=${1:-.}
     cd ${dir}
     if [[ -a ".update" ]]; then
         for repo in `cat .update`; do
