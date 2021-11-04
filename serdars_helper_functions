@@ -204,6 +204,10 @@ if command -v kompose 1>/dev/null 2>&1; then
   }
 fi
 
+# flux completion zsh
+# See https://fluxcd.io/docs/cmd/flux_completion_zsh/
+command -v flux >/dev/null && . <(flux completion zsh)
+
 #################################
 #	PATH MANIPULATION 	#
 #################################
