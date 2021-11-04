@@ -169,16 +169,6 @@ timemark() {
   date +'%Y-%m-%d--%H-%M-%S'
 }
 
-
-#################################
-#	LOCAL CONFIGS		#
-#################################
-gitlocalconfigada() {
-    git config --local user.name "Serdar Dalgic"
-    git config --local user.email "serdar.dalgic@ext.ada.com"
-}
-
-
 #################################################
 #	LAZY LOADING OF VARIOUS PROGRAMS	#
 #	TODO: Cleanup 				#
@@ -236,16 +226,13 @@ alias awsume='. \$(pyenv which awsume)'
 # jumps to the root path of a git repository. Thanks to Fatih for that https://twitter.com/fatih/status/1381555413083168769
 alias cdr='cd "$(git rev-parse --show-toplevel || echo .)"'
 
-# Used for Ada dev-test environment make commands
-# TODO: Remove when not needed.
-export SA_KEY_DNS_ROUTE53=Null
-export TF_VAR_cloudflare_api_token="<cloudflare_api_token>"
-
+# TODO: I'm not using helmfile anymore
+#       Let's keep this hack here for some time, and then if it's not needed anymore,
+#       we can remove it.
 # Hack for being able to pass version var to helmfile
 # If the helmfile executable is parsed via shims, the `version` env var
 # will be the helmfile version that's set via asdf
-export PATH=/Users/serdar/.asdf/installs/helmfile/0.130.1/bin:${PATH}
-
+# export PATH=/Users/serdar/.asdf/installs/helmfile/0.130.1/bin:${PATH}
 
 ##############################
 # Console Do Not Track (DNT) #
