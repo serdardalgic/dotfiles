@@ -66,7 +66,8 @@ add_serdars_ssh_keys() {
     add_ssh_keys_in_the_folder ~/.ssh/privat
 }
 
-add_serdars_ssh_keys
+# I'm only using the default ssh key at this moment, so let's disable this call for now.
+# add_serdars_ssh_keys
 
 # Used for creating an ~/.ssh/config file.
 #
