@@ -1,3 +1,6 @@
+#TODO:
+# add installation of direnvrc to Makefile
+# ln -s $(pwd)/direnvrc ~/.direnvrc
 # Example: export_alias zz "ls -la"
 # https://github.com/direnv/direnv/issues/73#issuecomment-174295790
 export_alias() {
