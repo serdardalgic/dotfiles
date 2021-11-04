@@ -92,6 +92,7 @@ create_ssh_config() {
 			echo "################################################################" >> ~/.ssh/config
 			echo "# Private ssh configs from ~/.ssh/sshconfigd/private directory #" >> ~/.ssh/config
 			echo "################################################################" >> ~/.ssh/config
+			setopt +o nomatch
 			for priv in ~/.ssh/sshconfigd/private/*.sshconfig(n);
 			do
 				cat $priv >> ~/.ssh/config
@@ -105,6 +106,7 @@ create_ssh_config() {
 				cat $pub >> ~/.ssh/config
 				echo >> ~/.ssh/config
 			done
+			setopt -o nomatch
 		fi
 		echo "~/.ssh/config is regenerated."
 	) 8> ~/.ssh/config.lock
