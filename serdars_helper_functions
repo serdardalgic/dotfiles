@@ -248,3 +248,6 @@ export SAM_CLI_TELEMETRY=0
 export AZURE_CORE_COLLECT_TELEMETRY=0
 # Run the gcloud command once
 # gcloud config set disable_usage_reporting true
+
+# Source specialized helper functions for EDB Development
+[ -f ~/.edb_functions ] && source ~/.edb_functions
