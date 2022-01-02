@@ -244,6 +244,12 @@ alias cdr='cd "$(git rev-parse --show-toplevel || echo .)"'
 # will be the helmfile version that's set via asdf
 # export PATH=/Users/serdar/.asdf/installs/helmfile/0.130.1/bin:${PATH}
 
+#
+# For asdf-golang plugin
+# See https://github.com/kennyp/asdf-golang/issues/28#issuecomment-726189750
+# After installing a go package and/or a new golang version, it requires the following go-reshim command:
+alias go-reshim='asdf reshim golang && export GOROOT="$(asdf where golang)/go/"'
+
 ##############################
 # Console Do Not Track (DNT) #
 ##############################
