@@ -180,6 +180,11 @@ timemark() {
   date +'%Y-%m-%d--%H-%M-%S'
 }
 
+first_words_of() {
+  # Print the list of first words in each line that starts with a character
+  ack -o '^[^ ]*' $1 | sort | uniq | grep . | grep -v '//' | grep -v '}'
+}
+
 #################################################
 #	LAZY LOADING OF VARIOUS PROGRAMS	#
 #	TODO: Cleanup 				#
