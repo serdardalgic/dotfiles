@@ -252,14 +252,6 @@ alias awsume='. \$(pyenv which awsume)'
 # jumps to the root path of a git repository. Thanks to Fatih for that https://twitter.com/fatih/status/1381555413083168769
 alias cdr='cd "$(git rev-parse --show-toplevel || echo .)"'
 
-# TODO: I'm not using helmfile anymore
-#       Let's keep this hack here for some time, and then if it's not needed anymore,
-#       we can remove it.
-# Hack for being able to pass version var to helmfile
-# If the helmfile executable is parsed via shims, the `version` env var
-# will be the helmfile version that's set via asdf
-# export PATH=/Users/serdar/.asdf/installs/helmfile/0.130.1/bin:${PATH}
-
 #
 # For asdf-golang plugin
 # See https://github.com/kennyp/asdf-golang/issues/28#issuecomment-726189750
