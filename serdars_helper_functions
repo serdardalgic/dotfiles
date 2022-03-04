@@ -29,17 +29,28 @@ update_all_git_repos() {
     # If no args are given, take the current dir as a first argument
     local dir=${1:-.}
     cd ${dir}
-    if [[ -a ".update" ]]; then
-        for repo in `cat .update`; do
-            update_git_repo $repo
-        done
+    # TODO: The name of the file that has the git directories to update are listed in $UPDATE_FILE location
+    #       It would be helpful to parameterize it.
+    #       It ignores the commented out lines that start with #
+    UPDATE_FILE=".update"
+    # UPDATE_FILE=".manual_update"
+    if [[ -a $UPDATE_FILE ]]; then
+        # Read all the repos from the update file
+	# Skip the commented out lines
+	# update_git_repo $repo
+	while read -r line;
+	do
+	  [[ "$line" =~ ^#.*$ ]] && continue
+	  update_git_repo $line
+	  # echo $line
+        done < $UPDATE_FILE
     else
 	echo "No .update file is found, creating one..."
 	for dir in `find . -maxdepth 2 -name .git`;
 	do
-	    echo `dirname $dir` >> .update;
+	    echo `dirname $dir` >> "${UPDATE_FILE}";
         done
-	echo "Please check the autocreated .update file and run $funcstack[1] command again."
+	echo "Please check the autocreated ${UPDATE_FILE} file and run $funcstack[1] command again."
     fi
 }
 
