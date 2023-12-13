@@ -8,18 +8,18 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 " Add vim-plug as a plugin for Vim help
 call plug#begin('~/.vim/plugged')
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+" " Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'junegunn/vim-plug'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets, etc.bb
+" Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+" Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 " vim-markdown-preview doesn't look like it's being developed anymore
 " switch to something else
-Plug 'JamshedVesuna/vim-markdown-preview'
+" Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-surround' "See https://github.com/tpope/vim-surround for details
 Plug 'tpope/vim-commentary' "See https://github.com/tpope/vim-commentary for details
