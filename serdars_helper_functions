@@ -258,6 +258,15 @@ alias cdr='cd "$(git rev-parse --show-toplevel || echo .)"'
 # After installing a go package and/or a new golang version, it requires the following go-reshim command:
 alias go-reshim='asdf reshim golang && export GOROOT="$(asdf where golang)/go/"'
 
+#
+# jo is a json output generator https://github.com/jpmens/jo
+# jo command also exists as an autojump function under /opt/homebrew/share/autojump/autojump.zsh
+# There are no plans to rename jo https://github.com/jpmens/jo/issues/24
+# That's why this is the hack to get both of them working
+#
+
+alias jo="$(brew --prefix jo)/bin/jo"
+
 ##############################
 # Console Do Not Track (DNT) #
 ##############################
@@ -269,5 +278,3 @@ export AZURE_CORE_COLLECT_TELEMETRY=0
 # Run the gcloud command once
 # gcloud config set disable_usage_reporting true
 
-# Source specialized helper functions for EDB Development
-[ -f ~/.edb_functions ] && source ~/.edb_functions
