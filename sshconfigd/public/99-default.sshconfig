@@ -5,8 +5,10 @@ Host *+*
   StrictHostKeyChecking false
   ProxyCommand ssh -F ~/.ssh/config -q -A -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=false -x $(echo %h | sed 's/+[^+]*$//;s/\([^+%%]*\)%%\([^+]*\)$/\2 -l \1/;s/:/ -p /') -W $(echo %h | sed 's/^.*+//;/:/!s/$/:%p/;')
 
-Host *
-  ForwardAgent yes
-# Disable SSH connections on ipv6
-  AddressFamily inet
-
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+  Hostname ssh.github.com
+  Port 443
+  User git
