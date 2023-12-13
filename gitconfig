@@ -2,6 +2,7 @@
 	name = Serdar Dalgıç
 	email = sd@serdardalgic.org
 	# TODO: Find a sustainable way to update the signingkey
+	signingkey = 3EE488207F0098CD
 	# signingkey = 27423AAA74A51EA5
 [alias]
     st = status
@@ -23,7 +24,10 @@
     pt = !git tag -l | xargs git tag -d && git fetch -t
 
 [commit]
-    gpgsign = false
+    gpgsign = true
+
+[tag]
+    gpgsign = true
 
 [color]
     ui = auto
