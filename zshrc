@@ -60,7 +60,6 @@ COMPLETION_WAITING_DOTS="true"
 #
 #
 plugins=(alias-finder
-	asdf
 	autojump
 	bgnotify
 	celery
@@ -119,6 +118,9 @@ source $ZSH/oh-my-zsh.sh
 # Source specialized helper functions
 [ -f ~/.serdars_helper_functions ] && source ~/.serdars_helper_functions
 
+# Keep this here for debugging purposes
+# echo $PATH
+
 export DOCKER_ID_USER="serdard"
 
 # Following line depends on kube-ps1 plugin
@@ -126,7 +128,3 @@ PROMPT='$(kube_ps1) '$PROMPT
 
 # Added by fzf installation through vim-plug
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# TODO:
-# I'm not so sure about the following addition to the fpath. Investigate!
-fpath=(/usr/local/share/zsh/site-functions $fpath)
