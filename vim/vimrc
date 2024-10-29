@@ -17,13 +17,10 @@ Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets
 " Plug 'honza/vim-snippets'
 " Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
-" vim-markdown-preview doesn't look like it's being developed anymore
-" switch to something else
-" Plug 'JamshedVesuna/vim-markdown-preview'
-Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-surround' "See https://github.com/tpope/vim-surround for details
 Plug 'tpope/vim-commentary' "See https://github.com/tpope/vim-commentary for details
 Plug 'tpope/vim-repeat'
+Plug 'majutsushi/tagbar'
 " YouCompleteMe is broken with pyenv python versions
 " FIXME: Investigate further:
 " https://github.com/Valloric/YouCompleteMe/issues/759
@@ -36,7 +33,6 @@ Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'majutsushi/tagbar'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'mileszs/ack.vim'
 call plug#end()
@@ -291,35 +287,10 @@ augroup END
 let g:ackprg="ack"
 noremap <Leader>a :LAck! <cword><cr>
 
-" Nerdtree plugin
+"
 """""""""""""""""""""
-nmap <leader>n :NERDTreeToggle <CR>
-let NERDTreeChDirMode=1
 
-"if g:os == 'Darwin' || g:os == 'Mac'
-if has('osx')
-    let g:NERDTreeDirArrows=0 " Fix a bug on mac
-endif
-
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
-
-" ultisnips
-"""""""""""""""""""""
-" Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-" Add extra directory to runtimepath for my personal snippets
-set rtp+=~/.vim/mycoolsnippets
-
-
-" YouCompleteMe
-" FIXME: See the FIXME at the plug section of YouCompleteMe
-"""""""""""""""""""""
-let g:ycm_python_binary_path = 'python'
-autocmd FileType pythonnmap <leader>g :YcmCompleter GoTo<CR>
-autocmd FileType pythonnmap <leader>d :YcmCompleter GoToDefinition<CR>
-
+" TODO: install vim-go and then check those settings
 " vim-go
 """""""""""""""""""""
 let g:go_fmt_command = "goimports"
@@ -399,15 +370,5 @@ function! s:build_go_files()
   endif
 endfunction
 
-" vim markdown plugin
-"""""""""""""""""""""
-let vim_markdown_preview_github=1
-
-" SimpylFold
-"""""""""""""""""""""
-let g:SimpylFold_docstring_preview=1
-
-" Tagbar
-"""""""""""""""""""""
-nmap <F8> :TagbarToggle<CR>
-autocmd Filetype python nmap <Leader>t :TagbarToggle<CR>
+" open Tagbar
+map <leader>t :TagbarToggle<CR>
