@@ -103,7 +103,6 @@ plugins=(alias-finder
 	transfer
 	urltools
 	vagrant
-	vault
 	web-search
 	zsh-syntax-highlighting # cd ~/.oh-my-zsh/custom/plugins/; git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 	)
