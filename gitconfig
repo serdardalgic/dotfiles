@@ -2,8 +2,8 @@
 	name = Serdar Dalgıç
 	email = sd@serdardalgic.org
 	# TODO: Find a sustainable way to update the signingkey
-	signingkey = 3EE488207F0098CD
-	# signingkey = 27423AAA74A51EA5
+	signingkey = 5A348AC76BBE198C
+	# signingkey = 3EE488207F0098CD
 [alias]
     st = status
     ci = commit
