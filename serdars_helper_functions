@@ -126,7 +126,7 @@ create_ssh_config() {
 #create_ssh_config public/01-bitbucket.sshconfig public/99-default.sshconfig
 # The following is the same with running create_ssh_config without any arguments
 # create_ssh_config ~/.ssh/sshconfigd/private/*(n) ~/.ssh/sshconfigd/public/*(n)
-create_ssh_config
+# create_ssh_config
 
 #################################
 #	MISC HELPERS		#
