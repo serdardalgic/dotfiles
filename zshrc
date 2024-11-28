@@ -60,6 +60,7 @@ COMPLETION_WAITING_DOTS="true"
 #
 #
 plugins=(alias-finder
+	asdf
 	autojump
 	bgnotify
 	celery
@@ -82,13 +83,16 @@ plugins=(alias-finder
 	git-extras # You need to install git-extras first https://github.com/tj/git-extras
 	gitignore
 	golang
+	helm
 	history
 	history-substring-search
 	iterm2
 	jira
+	kind
         kube-ps1
 	kubectl
 	man
+	minikube
 	pep8
 	pip
 	pylint
@@ -105,6 +109,7 @@ plugins=(alias-finder
 	vagrant
 	web-search
 	zsh-syntax-highlighting # cd ~/.oh-my-zsh/custom/plugins/; git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+	isodate
 	)
 
 
