@@ -248,3 +248,8 @@ export AZURE_CORE_COLLECT_TELEMETRY=0
 # Run the gcloud command once
 # gcloud config set disable_usage_reporting true
 
+# OMZ Jira Plugin settings
+
+rapid_jira(){
+  JIRA_RAPID_BOARD=true jira dashboard
+}
